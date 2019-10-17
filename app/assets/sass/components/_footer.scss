@@ -1,0 +1,129 @@
+.global-footer {
+	background-color: #f8f8f8;
+	border-top: 5px solid #00aeef
+}
+
+.footer-wrapper {
+	position: relative;
+	max-width: 1100px;
+	margin: 0 auto;
+	padding: 2em 15px
+}
+
+@media (min-width:48.0625em) {
+	.footer-wrapper {
+		padding-left: 0;
+		padding-right: 0
+	}
+}
+
+.footer-marque {
+	position: absolute;
+	top: -35px;
+	right: 0;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 35px 0 0 35px;
+	border-color: transparent transparent transparent #00aeef
+}
+
+.footer-logo {
+	width: 128.4px;
+	height: auto
+}
+
+.footer-logo img,
+.header-commercial__logo img,
+.header-logo img {
+	max-width: 100%
+}
+
+.footer-list {
+	margin-top: 1.5em;
+	font-size: 16px
+}
+
+.footer-list li {
+	display: inline-block;
+	border-left: 1px solid #bfc1c3;
+	padding: 0 10px
+}
+
+.footer-list li:first-child {
+	border-left: none;
+	padding-left: 0
+}
+
+.footer-list li a, .footer-list li a:visited, .footer-list li a:hover {
+	color: #0b0c0c;
+}
+
+@media (min-width:40.0625em) {
+	.footer-wrapper {
+		flex-direction: row;
+		text-align: left;
+		justify-content: space-between
+	}
+}
+
+.footer-wrapper .footer-logo {
+	margin-top: 0
+}
+
+@media (min-width:40.0625em) {
+	.footer-wrapper .footer-logo {
+		padding: 0;
+		margin-top: 0
+	}
+}
+
+.footer-wrapper .footer-logo img {
+	width: 128.4px
+}
+
+.govuk-template {
+    background-color: #f8f8f8;
+}
+
+.footer-wrapper {
+	display: flex;
+	flex-direction: column-reverse;
+	text-align: center
+}
+
+@media (min-width:1020px) {
+	.footer-wrapper {
+		flex-direction: row;
+		text-align: left;
+		justify-content: space-between
+	}
+}
+
+.footer-wrapper .footer-brand {
+	margin-top: 2em
+}
+
+@media (min-width:40.0625em) {
+	.footer-wrapper .footer-brand {
+		margin-top: 0
+	}
+}
+
+.footer-wrapper .footer-logo {
+	width: 100%;
+	padding: 0
+}
+
+@media (min-width:40.0625em) {
+	.footer-wrapper .footer-logo {
+		padding: 0
+	}
+}
+
+ul.govuk-list.footer-list.copyright li {
+    display: block;
+    border: none;
+    padding: 0;
+    margin-top: 2em;
+}

@@ -1,0 +1,131 @@
+
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "payment_options.html"
+}) }}
+      
+
+
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
+{% from "govuk/components/select/macro.njk" import govukSelect %}
+
+
+{% call govukFieldset({
+  legend: {
+    text: "Enter your card details",
+    classes: "govuk-fieldset__legend--xl",
+    isPageHeading: true
+  }
+}) %}
+
+  {{ govukInput({
+    label: {
+      html: 'Card number <span class="govuk-visually-hidden">Card number</span>'
+    },
+    classes: "govuk-!-width-two-thirds",
+    id: "card-number",
+    name: "card-number"
+  }) }}
+  
+
+{% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+
+{{ govukDateInput({
+  id: "expiry-date",
+  namePrefix: "expiry",
+  label: {
+    text: "Expiry date"
+},
+  fieldset: {
+    legend: {
+      text: "Expiry date:",
+      isPageHeading: false,
+      classes: ""
+    }
+  },
+  hint: {
+    text: "For example. 10/20"
+  },
+  items: [
+    {
+      name: "month",
+      classes: "govuk-input--width-2",
+      autocomplete: "current-month"
+    },
+
+    {
+      name: "year",
+      classes: "govuk-input--width-4",
+      autocomplete: "bday-year"
+    }
+  ]
+}) }}
+
+
+  {{ govukInput({
+    label: {
+      text: "Card security code:"
+    },
+    classes: "govuk-input--width-10",
+    id: "security-code",
+    name: "address-postcode",
+    hint: {
+      text: "The last 3 digits on the back of the card."
+  }
+  }) }}
+
+  {{ govukInput({
+    label: {
+      text: "Name on card"
+    },
+    classes: "govuk-!-width-two-thirds",
+    id: "name-card",
+    name: "name-card"
+  }) }}
+
+{% endcall %}
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{{ govukButton({
+  text: "Continue",
+  href: "/confirm_payment.html"
+}) }}
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+<a href="#" class="govuk-link govuk-link--no-visited-state">Cancel payment</a>
+
+
+
+
+    </div>
+
+        <div class="govuk-grid-column-one-third">
+          <aside>
+          <h2 class="govuk-heading-m">Payment summary</h2> 
+
+          <h3 class="govuk-heading-s">An example payment description</h3> 
+
+          <p class="govuk-body-s govuk-!-margin-0">Total amount:</p> 
+          <p class="govuk-body-l">£20.00</p>
+        </div>
+        </aside>
+
+</div>
+
+{% endblock %}

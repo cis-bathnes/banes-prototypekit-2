@@ -1,0 +1,52 @@
+
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "/card_address_details.html"
+}) }}
+      
+
+
+<h1 class="govuk-heading-xl">Do you want to proceed with this payment?</h1>
+
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{{ govukButton({
+  text: "Continue"
+}) }}
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+<a href="#" class="govuk-link govuk-link--no-visited-state">Cancel payment</a>
+
+    </div>
+    <div class="govuk-grid-column-one-third">
+    <aside>
+    <h2 class="govuk-heading-m">Payment summary</h2> 
+
+    <h3 class="govuk-heading-s">An example payment description</h3> 
+
+    <p class="govuk-body-s govuk-!-margin-0">Total amount:</p> 
+    <p class="govuk-body-l">£20.00</p>
+  </div>
+  </aside>
+
+</div>
+
+
+</div>
+
+{% endblock %}

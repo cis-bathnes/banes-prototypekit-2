@@ -1,0 +1,19 @@
+.breakout-box{
+  background: $bathnes-grey-3;
+  padding: 15px;
+  border: solid 2px $bathnes-grey-2;
+  margin:20px 0;
+    padding:10px;
+}
+
+.breakout-box-alt-primary{
+  background: $link-colour;
+  border: solid 2px $link-hover-colour;
+  color: $bathnes-white;
+}
+
+.breakout-box-alt-secondary{
+  background:$button-colour;
+  border: solid 2px $button-hover-colour;
+  color: $bathnes-white;
+}

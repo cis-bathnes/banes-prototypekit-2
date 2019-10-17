@@ -1,0 +1,120 @@
+
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "card_details.html"
+}) }}
+      
+
+
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
+
+{% call govukFieldset({
+  legend: {
+    text: "Billing address",
+    classes: "govuk-fieldset__legend--xl",
+    isPageHeading: true
+  }
+}) %}
+
+  {{ govukInput({
+    hint: {
+      text: "This is the address associated with the card."
+    },
+    label: {
+      html: 'Building and street <span class="govuk-visually-hidden">line 1 of 2</span>'
+    },
+    
+    id: "address-line-1",
+    name: "address-line-1"
+  }) }}
+
+  {{ govukInput({
+    label: {
+      html: '<span class="govuk-visually-hidden">Building and street line 2 of 2</span>'
+    },
+    id: "address-line-2",
+    name: "address-line-2"
+  }) }}
+
+  {{ govukInput({
+    label: {
+      text: "Town or city"
+    },
+    classes: "govuk-!-width-two-thirds",
+    id: "address-town",
+    name: "address-town"
+  }) }}
+
+  {{ govukInput({
+    label: {
+      text: "County"
+    },
+    classes: "govuk-!-width-two-thirds",
+    id: "address-county",
+    name: "address-county"
+  }) }}
+
+
+{{ govukInput({
+    label: {
+      text: "Country"
+    },
+    classes: "govuk-!-width-two-thirds",
+    id: "address-country",
+    name: "address-country"
+  }) }}
+
+
+  {{ govukInput({
+    label: {
+      text: "Postcode"
+    },
+    classes: "govuk-input--width-10",
+    id: "address-postcode",
+    name: "address-postcode"
+  }) }}
+
+{% endcall %}
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{{ govukButton({
+  text: "Continue",
+  href: "card_address_details.html"
+}) }}
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+<a href="#" class="govuk-link govuk-link--no-visited-state">Cancel payment</a>
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+      <aside>
+      <h2 class="govuk-heading-m">Payment summary</h2> 
+
+      <h3 class="govuk-heading-s">An example payment description</h3> 
+
+      <p class="govuk-body-s govuk-!-margin-0">Total amount:</p> 
+      <p class="govuk-body-l">£20.00</p>
+    </div>
+    </aside>
+
+</div>
+</div>
+
+{% endblock %}

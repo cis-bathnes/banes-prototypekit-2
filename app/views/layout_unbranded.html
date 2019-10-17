@@ -1,0 +1,120 @@
+{#- We can't mount GOV.UK Frontend's assets at root as it's done automatically by the extensions framework. -#}
+{%- set assetPath = '/govuk/assets' -%}
+
+{% extends "govuk/template.njk" %}
+
+{% block headIcons %}
+  <link rel="shortcut icon" href="{{ asset_path }}images/unbranded.ico?0.18.3" type="image/x-icon" />
+  <link rel="mask-icon" href="{{ asset_path }}images/gov.uk_logotype_crown.svg?0.18.3" color="#0b0c0c">
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="{{ asset_path }}images/apple-touch-icon-152x152.png?0.18.3">
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="{{ asset_path }}images/apple-touch-icon-120x120.png?0.18.3">
+  <link rel="apple-touch-icon-precomposed" sizes="76x76" href="{{ asset_path }}images/apple-touch-icon-76x76.png?0.18.3">
+  <link rel="apple-touch-icon-precomposed" href="{{ asset_path }}images/apple-touch-icon-60x60.png?0.18.3">
+{% endblock %}
+
+{% block head %}
+  <link href="/public/stylesheets/unbranded.css" media="all" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+{% endblock %}
+
+{% block header %}
+<header id="global-header">
+	<div class="header-wrapper">
+		<div class="header-global">
+			<div class="header-logo">
+				<a href="/" id="logo" class="content">
+<img src="/public/images/bathnes-logo-colour.png" alt="Bath &amp; North East Somerset Council">                </a>
+      </div>
+      
+    </div>
+			<div class="header-search header-search--desktop">
+				  <div>
+    
+  </div>
+
+			</div>
+		</div>
+		<button id="js-header-toggle" class="navigation-trigger" onclick="showHideMenu()">Menu</button>
+	</div>
+	  <div>
+    <nav id="navigation-primary" class="navigation-primary" aria-label="block-headermenu-menu">
+            
+  <h2 class="visually-hidden" id="block-headermenu-menu">Header menu</h2>
+  
+
+        
+                      <ul class="navigation-primary-list">
+                    <li class="navigation-primary-list__item">
+          <a href="https://www.bathnes.gov.uk">Home</a>
+                  </li>
+                  <li class="navigation-primary-list__item">
+                    <a href="https://www.bathnes.gov.uk">Services</a>
+                            </li>
+                            <li class="navigation-primary-list__item">
+                              <a href="https://www.bathnes.gov.uk">Pay for it</a>
+                                      </li>
+                                      <li class="navigation-primary-list__item">
+                                        <a href="https://www.bathnes.gov.uk">Report it</a>
+                                      </li>
+                                      <li class="navigation-primary-list__item">
+                                        <a href="https://www.bathnes.gov.uk">What's on</a>
+                                      </li>
+                                      <li class="navigation-primary-list__item">
+                                        <a href="https://www.bathnes.gov.uk">Have your say</a>
+                                      </li>
+                                      <li class="navigation-primary-list__item">
+                                        <a href="https://www.bathnes.gov.uk">Contact us</a>
+                                      </li>
+                  
+              
+            </ul>
+      
+  
+  </nav>
+</header>
+<div id="global-header-bar"></div>
+  </div>
+
+
+
+</header>
+{% endblock %}
+{% block footer %}
+
+<footer class="global-footer">
+  <div class="footer-wrapper">
+    <div class="footer-brand">
+      <div class="footer-logo">
+          <img src="/public/images/bathnes-logo-mono.png" alt="Bath &amp; North East Somerset Council Mono Logo">
+        </div>
+        <ul class="govuk-list footer-list">
+              <li><a href="/accessibility">Accessibility</a></li>
+              <li><a href="/contact-us">Contact Us</a></li>
+              <li><a href="/privacy-policy">Privacy Policy</a></li>
+              <li><a href="/disclaimer">Disclaimer</a></li>
+              <li><a href="/cookies">Cookies</a></li>
+        </ul>
+        <ul class="govuk-list footer-list">
+             <li><a href="/prototype-admin/clear-data">Clear data</li>
+
+          </ul>
+        </div>
+      <div class="social-links">
+          <h2 class="govuk-heading-s">
+            Follow us on social media</h2>
+          <ul class="govuk-list footer-list">
+            <li><a href="https://www.facebook.com/bathnes/"><i class="fa fa-facebook fa-3x" aria-hidden="true"></i>
+            </a></li>
+            <li><a href="https://twitter.com/bathnes"><i class="fa fa-twitter fa-3x" aria-hidden="true"></i></a></li>
+            <li><a href="https://www.youtube.com/user/BathnesCouncil/videos">
+              <i class="fa fa-youtube fa-3x" aria-hidden="true"></i></a></li>
+            <li><a href="https://www.instagram.com/bathnescouncil/"><i class="fa fa-instagram fa-3x" aria-hidden="true"></i></a></li>
+          </ul>
+      </div>
+    </div>
+</footer>
+{% endblock %}
+
+{% block bodyEnd %}
+  {% include "includes/scripts.html" %}
+{% endblock %}

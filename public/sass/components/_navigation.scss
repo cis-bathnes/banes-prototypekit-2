@@ -1,0 +1,118 @@
+.navigation-primary {
+	font-family: "nta", Arial, sans-serif;
+	position: relative;
+	overflow: hidden;
+	border-top: 5px solid #fff
+}
+
+body.js-enabled .navigation-primary {
+	transition: max-height ease-out .35s;
+	max-height: 0
+}
+
+.navigation-primary--active {
+	border-top: 5px solid #00aeef
+}
+
+body.js-enabled .navigation-primary--active {
+	transition: max-height ease-out .5s;
+	max-height: 1000px
+}
+
+@media (min-width:48.0625em) {
+	.navigation-primary {
+		display: block;
+		border-top: 1px solid #bfc1c3
+	}
+	body.js-enabled .navigation-primary {
+		max-height: 100%
+	}
+}
+
+.navigation-primary-list {
+	overflow: hidden;
+	list-style: none;
+	max-width: 1100px;
+	margin: 0 auto;
+	padding-left: 15px;
+	padding-right: 15px
+}
+
+@media (min-width:48.0625em) {
+	.navigation-primary-list {
+		padding-left: 0;
+		padding-right: 0
+	}
+}
+
+.navigation-primary-list__item {
+	display: block
+}
+
+.navigation-primary-list__item a {
+	display: block;
+	padding: .5em 0;
+	text-decoration: none;
+	color: #0b0c0c;
+	font-size: 16px
+}
+
+.navigation-primary-list__item a:active,
+.navigation-primary-list__item a:hover {
+	text-decoration: underline
+}
+
+@media (min-width:48.0625em) {
+	.navigation-primary-list__item {
+		display: inline-block
+	}
+	.navigation-primary-list__item a {
+		padding: .75em 1em
+	}
+	.navigation-primary-list__item:first-child a {
+		padding-left: 0
+	}
+}
+
+.navigation-trigger {
+	position: absolute;
+	top: 1.65em;
+	right: 15px;
+	text-decoration: none;
+	color: #0b0c0c;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	border-radius: 5px;
+	font-size: 14px;
+	padding: 5px 10px;
+	background-color: #f4f4f4
+}
+
+.navigation-trigger:active,
+.navigation-trigger:hover {
+	background-color: #eee
+}
+
+.navigation-trigger:after {
+	display: inline-block;
+	font-size: 8px;
+	height: 8px;
+	padding-left: 5px;
+	vertical-align: middle;
+	content: " \25BC"
+}
+
+@media (min-width:48.0625em) {
+	.navigation-trigger {
+		display: none
+	}
+}
+
+h2#block-headermenu-menu {
+	display: none;
+}
+
+li.navigation-primary-list__item.float-right {
+	float: right;
+}

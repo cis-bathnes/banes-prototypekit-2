@@ -1,0 +1,63 @@
+
+{% extends "layout_unbranded.html" %}
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    	{% from "govuk/components/table/macro.njk" import govukTable %}
+
+
+<h1 class="govuk-heading-xl">Contact us with a concern about a Child or Young Person</h1>
+<p class="govuk-body">This form is for anyone who works with children and has a role in safeguarding and child protection.</p>
+
+<p class="govuk-body">By filling in this form you’ll be helping us decide what kind of support is most appropriate for the child, young person or family.</p>
+
+<div class="breakout-box">
+
+  {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
+  {{ govukWarningText({
+    text: "If a child or young person is in immediate danger then please dial 999 and ask for police assistance..",
+    iconFallbackText: "Warning"
+  }) }}
+  
+
+</div>
+
+
+
+<h2 class="govuk-heading-l">Before you start</h2>
+
+<p class="govuk-body">Make sure that the child is living in Bath and North East Somerset. You can do this by finding their local council.</p>
+
+<p class="govuk-body">complete your referral make sure you have:</p> 
+
+<ul class="govuk-list govuk-list--bullet">
+  <li>the name, date of birth and address for each child you are including in the referral</li>
+  
+  <li> the name and contact details for each parent or carer
+  </li>
+  <li>information about what support has been offered to the family
+  </li>
+</ul>
+
+<p class='govuk-body'>With this information to hand your referral should take about X minutes to complete in total.</p>
+
+<p class='govuk-body'>To report a concern about a child who already has a social worker, you should contact the social worker or unit involved.</p>
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{{ govukButton({
+  text: "Start now",
+  href: "about_you.html",
+  isStartButton: true
+}) }}
+      
+    </div>
+</div>
+
+{% endblock %}
