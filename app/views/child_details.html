@@ -1,0 +1,58 @@
+{% extends "layout_unbranded.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+        {{ govukBackLink({
+          text: "Back",
+          href: "javascript: window.history.go(-1)"
+        }) }}
+
+        <form action="/child_address" method="post" class="form">
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="role-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                        <h1 class="govuk-fieldset__heading">
+                            What is the child's name, or school?
+                        </h1>
+                    </legend>
+                    <span id="role-hint" class="govuk-hint">
+                        To be able to provide support, we need to identify the child.
+                    </span>
+
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="child-name">
+                            Child's name
+                        </label>
+
+
+                        <input class="govuk-input" id="child-name" name="child-name" type="text">
+                    </div>
+
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="child-school">
+                            Child's school
+                        </label>
+
+
+                        <input class="govuk-input" id="child-school" name="child-school" type="text">
+                    </div>
+
+                </fieldset>
+            </div>
+
+            <button class=" govuk-button" data-module="govuk-button">Continue</button>
+
+        </form>
+
+    </div>
+</div>
+
+{% endblock %}

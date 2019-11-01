@@ -31,7 +31,7 @@ router.post('/child-known', function (req, res) {
   let answer = req.session.data['child-known']
 
   if (answer === 'yes') {
-    res.redirect('/concern')
+    res.redirect('/your_concerns')
   } else {
     res.redirect('/outcome_3')
   }
@@ -48,7 +48,6 @@ router.post('/concerning-issues', function (req, res) {
     res.redirect('/issues_of_concern')
   }
 })
-
 
 router.post('/harm', function (req, res) {
 
