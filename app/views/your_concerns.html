@@ -8,79 +8,77 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-
-      {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
-
-{{ govukBackLink({
-  text: "Back",
-  href: "your_relationship.html"
-}) }}
+      <a href="your_relationship.html" class="govuk-back-link">Back</a>
   
-<h1 class="govuk-heading-xl govuk-!-margin-bottom-0 ">How concerned are you?</h1>
-<div class="breakout-box">
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-0 ">How concerned are you?</h1>
+      
+      <div class="breakout-box">
+        <div class="govuk-warning-text">
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+          <strong class="govuk-warning-text__text">
+          <span class="govuk-warning-text__assistive">Warning</span>
+            If you are currently witnessing a child being harmed or in a situation of immediate risk call 999'
+          </strong>
+        </div>
 
-{% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
-
-{{ govukWarningText({
-  text: "If you are currently witnessing a child being harmed or in a situation of immediate risk call 999'",
-  iconFallbackText: "Warning"
-}) }}
 </div>
 
-     
+  
+<div class="govuk-form-group">
 
-{% from "govuk/components/radios/macro.njk" import govukRadios %}
+  <span id="how-concerned-hint" class="govuk-hint">
+    Pick one that describes you best:
+  </span>
 
-{{ govukRadios({
-  idPrefix: "how-concerned",
-  name: "how-concerned",
-  hint: {
-    text: "Pick one that describes you best:"
-  },
-  items: [
-    {
-      value: "significant-harm",
-      text: "I'm concerned that a child is suffering or likely to suffer significant harm",
-      label: {
-        classes: "govuk-label--s"
-      },
-      hint: {
-        text: "Choose this if you want to protect a child from abuse or serious neglect, or if you feel require the child requires acute services or care away from home."
-      }
-    },
-    {
-      value: "childs-wellbeing",
-      text: "I'm concerned about a child's wellbeing. They have complex needs and other support hasn't worked",
-      label: {
-        classes: "govuk-label--s"
-      },
-      hint: {
-        text: "Choose this if you feel a child would benefit from co-ordinated programme of support from more than one agency (e.g. using the Early Help Assessment, or Team Around The Child/Family)."
-      }
-    },
 
-    {
-      value: "early-help",
-      text: "I'm looking to get support for a child (or their family) before their needs escalate",
-      label: {
-        classes: "govuk-label--s"
-      },
-      hint: {
-        text: "Choose this if you feel a family requires additional support from a single agency to prevent their needs escalating."
-      }
-    }
-  ]
-}) }}
-
-      {% from "govuk/components/button/macro.njk" import govukButton %}
-
-{{ govukButton({
-  text: "Continue",
-  href: "significant_harm.html",
-  isStartButton: false
-}) }}
-
+  <div class="govuk-radios">
+    
+    <div class="govuk-radios__item">
+      <input class="govuk-radios__input" id="how-concerned" name="how-concerned" type="radio" value="significant-harm" aria-describedby="how-concerned-item-hint">
+      <label class="govuk-label govuk-radios__label govuk-label--s" for="how-concerned">
+        I'm concerned that a child is suffering or likely to suffer significant harm
+      </label>
       
+      <span id="how-concerned-item-hint" class="govuk-hint govuk-radios__hint">
+        Choose this if you want to protect a child from abuse or serious neglect, or if you feel require the child requires acute services or care away from home.
+      </span>
+      
+    </div>
+    
+    
+    <div class="govuk-radios__item">
+      <input class="govuk-radios__input" id="how-concerned-2" name="how-concerned" type="radio" value="childs-wellbeing" aria-describedby="how-concerned-2-item-hint">
+      <label class="govuk-label govuk-radios__label govuk-label--s" for="how-concerned-2">
+        I'm concerned about a child's wellbeing. They have complex needs and other support hasn't worked
+      </label>
+      
+      <span id="how-concerned-2-item-hint" class="govuk-hint govuk-radios__hint">
+        Choose this if you feel a child would benefit from co-ordinated programme of support from more than one agency (e.g. using the Early Help Assessment, or Team Around The Child/Family).
+      </span>
+      
+    </div>
+    
+    
+    <div class="govuk-radios__item">
+      <input class="govuk-radios__input" id="how-concerned-3" name="how-concerned" type="radio" value="early-help" aria-describedby="how-concerned-3-item-hint">
+      <label class="govuk-label govuk-radios__label govuk-label--s" for="how-concerned-3">
+        I'm looking to get support for a child (or their family) before their needs escalate
+      </label>
+      
+      <span id="how-concerned-3-item-hint" class="govuk-hint govuk-radios__hint">
+        Choose this if you feel a family requires additional support from a single agency to prevent their needs escalating.
+      </span>
+      
+    </div>
+    
+  </div>
+
+</div>
+  
+<a href="significant_harm.html" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+  Continue
+</a>
+  
     </div>
 </div>
 
