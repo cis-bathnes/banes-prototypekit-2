@@ -18,11 +18,11 @@ router.post('/is-professional', function (req, res) {
   let professional = req.session.data['is-professional']
 
   if (professional === 'professional') {
-    res.redirect('/professional_contact_details')
+    res.redirect('/your_concerns')
   } else if (professional === 'concerned-citizen') {
     res.redirect('/child_details_known')
   } else {
-    res.redirect('/outcome-4')
+    res.redirect('/outcome_4')
   }
 })
 

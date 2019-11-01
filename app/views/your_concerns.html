@@ -1,87 +1,92 @@
-
 {% extends "layout_unbranded.html" %}
 {% block pageTitle %}
-  GOV.UK Prototype Kit
+GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <a href="your_relationship.html" class="govuk-back-link">Back</a>
-  
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-0 ">How concerned are you?</h1>
-      
-      <div class="breakout-box">
-        <div class="govuk-warning-text">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <a href="javascript: window.history.go(-1)" class="govuk-back-link">Back</a>
+
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-0 ">How concerned are you?</h1>
+
+    <div class="breakout-box">
+      <div class="govuk-warning-text">
         <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-          <strong class="govuk-warning-text__text">
+        <strong class="govuk-warning-text__text">
           <span class="govuk-warning-text__assistive">Warning</span>
-            If you are currently witnessing a child being harmed or in a situation of immediate risk call 999'
-          </strong>
+          If you are currently witnessing a child being harmed or in a situation of immediate risk call 999'
+        </strong>
+      </div>
+
+    </div>
+    <form action="/concerning-issues" method="post" class="form">
+
+
+      <div class="govuk-form-group">
+
+        <span id="how-concerned-hint" class="govuk-hint">
+          Pick one that describes you best:
+        </span>
+
+
+        <div class="govuk-radios">
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="how-concerned" name="concerning-issues" type="radio"
+              value="significant-harm" aria-describedby="how-concerned-item-hint">
+            <label class="govuk-label govuk-radios__label govuk-label--s" for="how-concerned">
+              I'm concerned that a child is suffering or likely to suffer significant harm
+            </label>
+
+            <span id="how-concerned-item-hint" class="govuk-hint govuk-radios__hint">
+              Choose this if you want to protect a child from abuse or serious neglect, or if you feel require the child
+              requires acute services or care away from home.
+            </span>
+
+          </div>
+
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="how-concerned-2" name="concerning-issues" type="radio"
+              value="childs-wellbeing" aria-describedby="how-concerned-2-item-hint">
+            <label class="govuk-label govuk-radios__label govuk-label--s" for="how-concerned-2">
+              I'm concerned about a child's wellbeing. They have complex needs and other support hasn't worked
+            </label>
+
+            <span id="how-concerned-2-item-hint" class="govuk-hint govuk-radios__hint">
+              Choose this if you feel a child would benefit from co-ordinated programme of support from more than one
+              agency (e.g. using the Early Help Assessment, or Team Around The Child/Family).
+            </span>
+
+          </div>
+
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="how-concerned-3" name="concerning-issues" type="radio"
+              value="support-child" aria-describedby="how-concerned-3-item-hint">
+            <label class="govuk-label govuk-radios__label govuk-label--s" for="how-concerned-3">
+              I'm looking to get support for a child (or their family) before their needs escalate
+            </label>
+
+            <span id="how-concerned-3-item-hint" class="govuk-hint govuk-radios__hint">
+              Choose this if you feel a family requires additional support from a single agency to prevent their needs
+              escalating.
+            </span>
+
+          </div>
+
         </div>
 
-</div>
-<form action="/concerning-issues" method="post" class="form">
-
-  
-<div class="govuk-form-group">
-
-  <span id="how-concerned-hint" class="govuk-hint">
-    Pick one that describes you best:
-  </span>
+      </div>
 
 
-  <div class="govuk-radios">
-    
-    <div class="govuk-radios__item">
-      <input class="govuk-radios__input" id="how-concerned" name="concerning-issues" type="radio" value="significant-harm" aria-describedby="how-concerned-item-hint">
-      <label class="govuk-label govuk-radios__label govuk-label--s" for="how-concerned">
-        I'm concerned that a child is suffering or likely to suffer significant harm
-      </label>
-      
-      <span id="how-concerned-item-hint" class="govuk-hint govuk-radios__hint">
-        Choose this if you want to protect a child from abuse or serious neglect, or if you feel require the child requires acute services or care away from home.
-      </span>
-      
-    </div>
-    
-    
-    <div class="govuk-radios__item">
-      <input class="govuk-radios__input" id="how-concerned-2" name="concerning-issues" type="radio" value="childs-wellbeing" aria-describedby="how-concerned-2-item-hint">
-      <label class="govuk-label govuk-radios__label govuk-label--s" for="how-concerned-2">
-        I'm concerned about a child's wellbeing. They have complex needs and other support hasn't worked
-      </label>
-      
-      <span id="how-concerned-2-item-hint" class="govuk-hint govuk-radios__hint">
-        Choose this if you feel a child would benefit from co-ordinated programme of support from more than one agency (e.g. using the Early Help Assessment, or Team Around The Child/Family).
-      </span>
-      
-    </div>
-    
-    
-    <div class="govuk-radios__item">
-      <input class="govuk-radios__input" id="how-concerned-3" name="concerning-issues" type="radio" value="support-child" aria-describedby="how-concerned-3-item-hint">
-      <label class="govuk-label govuk-radios__label govuk-label--s" for="how-concerned-3">
-        I'm looking to get support for a child (or their family) before their needs escalate
-      </label>
-      
-      <span id="how-concerned-3-item-hint" class="govuk-hint govuk-radios__hint">
-        Choose this if you feel a family requires additional support from a single agency to prevent their needs escalating.
-      </span>
-      
-    </div>
-    
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+    </form>
+
   </div>
-
-</div>
-  
-
-<button class="govuk-button" data-module="govuk-button">Continue</button>
-
-</form>
-  
-    </div>
 </div>
 
 {% endblock %}

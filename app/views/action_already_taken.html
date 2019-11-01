@@ -1,25 +1,24 @@
-
 {% extends "layout_unbranded.html" %}
 {% block pageTitle %}
-  GOV.UK Prototype Kit
+GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
 
-      {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+    {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
 
-{{ govukBackLink({
+    {{ govukBackLink({
   text: "Back",
-  href: "significant_harm"
+  href: "javascript: window.history.go(-1)"
 }) }}
-  
 
-{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
 
-{{ govukCheckboxes({
+    {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+    {{ govukCheckboxes({
   idPrefix: "action-taken",
   name: "action-taken",
   fieldset: {
@@ -63,9 +62,9 @@
 }) }}
 
 
-{% from "govuk/components/radios/macro.njk" import govukRadios %}
+    {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
-{{ govukRadios({
+    {{ govukRadios({
   idPrefix: "something-else",
   name: "where-do-you-live",
   
@@ -81,18 +80,18 @@
 }) }}
 
 
-     
 
-      {% from "govuk/components/button/macro.njk" import govukButton %}
 
-{{ govukButton({
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+
+    {{ govukButton({
   text: "Continue",
   href: "#",
   isStartButton: false
 }) }}
 
-      
-    </div>
+
+  </div>
 </div>
 
 {% endblock %}

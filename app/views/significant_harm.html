@@ -1,133 +1,145 @@
-
 {% extends "layout_unbranded.html" %}
 {% block pageTitle %}
-  GOV.UK Prototype Kit
+GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
 
-         
-<a href="your_concerns.html" class="govuk-back-link">Back</a>
-  
-<div class="govuk-form-group">
-  <fieldset class="govuk-fieldset" aria-describedby="significant-harm-hint">
-  <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-    <h1 class="govuk-fieldset__heading">
-      What sort of significant harm is this child at risk of?
-    </h1>
-  </legend>
-  
-  <span id="significant-harm-hint" class="govuk-hint">
-    Select all that apply
-  </span>
 
-  <div class="govuk-checkboxes">
-        
-    <div class="govuk-checkboxes__item">
-      <input class="govuk-checkboxes__input" id="significant-harm-1" name="significant-harm" type="checkbox" value="emotional_abuse" aria-describedby="nationality-item-hint">
-      <label class="govuk-label govuk-checkboxes__label" for="significant-harm-1">
-        Emotional abuse
-      </label>
-      
-      <span id="significant-harm-1-hint" class="govuk-hint govuk-checkboxes__hint">
-        The persistent emotional maltreatment of a child such as to cause severe and persistent adverse effects on the child’s emotional development.
-      </span>
-      
-    </div>
-    
-    
-    <div class="govuk-checkboxes__item">
-      <input class="govuk-checkboxes__input" id="significant-harm-2" name="significant-harm" type="checkbox" value="physical_abuse" aria-describedby="significant-harm-hint-2">
-      <label class="govuk-label govuk-checkboxes__label" for="significant-harm-2">
-        Physical abuse
-      </label>
-      
-      <span id="significant-harm-2-hint" class="govuk-hint govuk-checkboxes__hint">
-        The persistent emotional maltreatment of a child such as to cause severe and persistent adverse effects on the child’s emotional development.
-      </span>
-      
-    </div>
- 
-    
-    <div class="govuk-checkboxes__item">
-      <input class="govuk-checkboxes__input" id="significant-harm-3" name="significant-harm" type="checkbox" value="sexual_abuse" aria-describedby="significant-harm-3-hint">
-      <label class="govuk-label govuk-checkboxes__label" for="significant-harm-3">
-        Sexual abuse
-      </label>
-      
-      <span id="significant-harm-3-hint" class="govuk-hint govuk-checkboxes__hint">
-        The persistent emotional maltreatment of a child such as to cause severe and persistent adverse effects on the child’s emotional development.
-      </span>
-      
-    </div>
-    
-    
-    <div class="govuk-checkboxes__item">
-      <input class="govuk-checkboxes__input" id="significant-harm-4" name="significant-harm" type="checkbox" value="serious_neglect" aria-describedby="significant-harm-4-hint">
-      <label class="govuk-label govuk-checkboxes__label" for="significant-harm-4">
-        Serious neglect
-      </label>
-      
-      <span id="significant-harm-4-hint" class="govuk-hint govuk-checkboxes__hint">
-        The persistent emotional maltreatment of a child such as to cause severe and persistent adverse effects on the child’s emotional development.
-      </span>
-      
-    </div>
-    
-    
-    
-    
-    
-    
-    
-    <div class="govuk-checkboxes__item">
-      <input class="govuk-checkboxes__input" id="significant-harm-5" name="significant-harm" type="checkbox" value="child_exploitation" aria-describedby="nationality-5-item-hint">
-      <label class="govuk-label govuk-checkboxes__label" for="significant-harm-5">
-        Child exploitation
-      </label>
-      
-      <span id="significant-harm-5-hint" class="govuk-hint govuk-checkboxes__hint">
-        The persistent emotional maltreatment of a child such as to cause severe and persistent adverse effects on the child’s emotional development.
-      </span>
-      
-    </div>
-    
-    
-    <div class="govuk-checkboxes__item">
-      <input class="govuk-checkboxes__input" id="significant-harm-6" name="significant-harm-6" type="checkbox" value="radicalisation" aria-describedby="significant-harm-6-hint">
-      <label class="govuk-label govuk-checkboxes__label" for="significant-harm-6">
-        Radicalisation
-      </label>
-      
-      <span id="significant-harm-6-hint" class="govuk-hint govuk-checkboxes__hint">
-        The persistent emotional maltreatment of a child such as to cause severe and persistent adverse effects on the child’s emotional development.
-      </span>
-      
-    </div>
-    
-    <div class="govuk-radios__divider">or</div>
+    <a href="javascript: window.history.go(-1)" class="govuk-back-link">Back</a>
 
-    <div class="govuk-checkboxes__item">
-      <input class="govuk-checkboxes__input" id="significant-harm-7" name="significant-harm-7" type="checkbox" value="none of the above">
-      <label class="govuk-label govuk-checkboxes__label" for="significant-harm-7">
-        None of the above, it's something else
-      </label>
-      
-      
-      
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="significant-harm-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+          <h1 class="govuk-fieldset__heading">
+            What sort of significant harm is this child at risk of?
+          </h1>
+        </legend>
+
+        <span id="significant-harm-hint" class="govuk-hint">
+          Select all that apply
+        </span>
+
+        <div class="govuk-checkboxes">
+
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="significant-harm-1" name="significant-harm" type="checkbox"
+              value="emotional_abuse" aria-describedby="nationality-item-hint">
+            <label class="govuk-label govuk-checkboxes__label" for="significant-harm-1">
+              Emotional abuse
+            </label>
+
+            <span id="significant-harm-1-hint" class="govuk-hint govuk-checkboxes__hint">
+              The persistent emotional maltreatment of a child such as to cause severe and persistent adverse effects on
+              the child’s emotional development.
+            </span>
+
+          </div>
+
+
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="significant-harm-2" name="significant-harm" type="checkbox"
+              value="physical_abuse" aria-describedby="significant-harm-hint-2">
+            <label class="govuk-label govuk-checkboxes__label" for="significant-harm-2">
+              Physical abuse
+            </label>
+
+            <span id="significant-harm-2-hint" class="govuk-hint govuk-checkboxes__hint">
+              The persistent emotional maltreatment of a child such as to cause severe and persistent adverse effects on
+              the child’s emotional development.
+            </span>
+
+          </div>
+
+
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="significant-harm-3" name="significant-harm" type="checkbox"
+              value="sexual_abuse" aria-describedby="significant-harm-3-hint">
+            <label class="govuk-label govuk-checkboxes__label" for="significant-harm-3">
+              Sexual abuse
+            </label>
+
+            <span id="significant-harm-3-hint" class="govuk-hint govuk-checkboxes__hint">
+              The persistent emotional maltreatment of a child such as to cause severe and persistent adverse effects on
+              the child’s emotional development.
+            </span>
+
+          </div>
+
+
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="significant-harm-4" name="significant-harm" type="checkbox"
+              value="serious_neglect" aria-describedby="significant-harm-4-hint">
+            <label class="govuk-label govuk-checkboxes__label" for="significant-harm-4">
+              Serious neglect
+            </label>
+
+            <span id="significant-harm-4-hint" class="govuk-hint govuk-checkboxes__hint">
+              The persistent emotional maltreatment of a child such as to cause severe and persistent adverse effects on
+              the child’s emotional development.
+            </span>
+
+          </div>
+
+
+
+
+
+
+
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="significant-harm-5" name="significant-harm" type="checkbox"
+              value="child_exploitation" aria-describedby="nationality-5-item-hint">
+            <label class="govuk-label govuk-checkboxes__label" for="significant-harm-5">
+              Child exploitation
+            </label>
+
+            <span id="significant-harm-5-hint" class="govuk-hint govuk-checkboxes__hint">
+              The persistent emotional maltreatment of a child such as to cause severe and persistent adverse effects on
+              the child’s emotional development.
+            </span>
+
+          </div>
+
+
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="significant-harm-6" name="significant-harm-6" type="checkbox"
+              value="radicalisation" aria-describedby="significant-harm-6-hint">
+            <label class="govuk-label govuk-checkboxes__label" for="significant-harm-6">
+              Radicalisation
+            </label>
+
+            <span id="significant-harm-6-hint" class="govuk-hint govuk-checkboxes__hint">
+              The persistent emotional maltreatment of a child such as to cause severe and persistent adverse effects on
+              the child’s emotional development.
+            </span>
+
+          </div>
+
+          <div class="govuk-radios__divider">or</div>
+
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="significant-harm-7" name="significant-harm-7" type="checkbox"
+              value="none of the above">
+            <label class="govuk-label govuk-checkboxes__label" for="significant-harm-7">
+              None of the above, it's something else
+            </label>
+
+
+
+          </div>
+        </div>
+      </fieldset>
     </div>
+
+    <a href="/concern-issue" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+      Continue
+    </a>
+
   </div>
-  </fieldset>
-</div>
-
-<a href="/concern-issue" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
-  Continue
-</a>
-      
-    </div>
 </div>
 
 {% endblock %}
