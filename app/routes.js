@@ -49,16 +49,22 @@ router.post('/concerning-issues', function (req, res) {
   }
 })
 
-router.post('/harm', function (req, res) {
 
-  let answer = req.session.data['harm']
+router.post('/type-of-harm', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
 
-  if (answer === 'none') {
+  let answer = req.body['none']
+  console.log(answer)
+
+  if(answer !== '_unchecked') {
     res.redirect('/issues_of_concern')
-  } else {
+  } else{
     res.redirect('/outcome_1')
-  }
-})
+  }   
+    
 
+})
 
 module.exports = router
