@@ -1,0 +1,54 @@
+{% extends "layout_unbranded.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+    {{ govukBackLink({
+          text: "Back",
+          href: "index"
+        }) }}
+
+    <form action="/child-known" method="post" class="form">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="child-known-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">
+              Do you know the child's name, address or school?
+            </h1>
+          </legend>
+          <span id="child-known-hint" class="govuk-hint">
+            <!-- This includes changing your last name or spelling your name differently. -->
+          </span>
+          <div class="govuk-radios govuk-radios--inline">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="child-known" name="child-known" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="child-known">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="child-known-2" name="child-known" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="child-known-2">
+                No
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
