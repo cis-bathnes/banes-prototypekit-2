@@ -19,6 +19,8 @@ router.post('/is-professional', function (req, res) {
 
   if (professional === 'professional') {
     res.redirect('/professional_contact_details')
+  } else if (professional === 'concerned-citizen') {
+    res.redirect('/child_details_known')
   } else {
     res.redirect('/outcome-4')
   }
