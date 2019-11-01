@@ -1,0 +1,49 @@
+{% extends "layout_unbranded.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+    {{ govukBackLink({
+          text: "Back",
+          href: "javascript: window.history.go(-1)"
+        }) }}
+
+    <form action="/your_role" method="post" class="form">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="address-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">
+              What is your address?
+            </h1>
+          </legend>
+          <span id="address-hint" class="govuk-hint">
+            Enter your address to begin searching. For example, 10 High Street
+          </span>
+          <label class="govuk-label" for="address">Address search</label>
+          <input class="govuk-input" id="address" name="address" type="text" autocomplete="name" spellcheck="false">
+
+          <div class="govuk-!-margin-top-3 govuk-!-margin-bottom-3">
+            <a href="#" class="govuk-link govuk-link--no-visited-state" id="PCCantFindp4">I still can't
+              find my
+              address</a>
+          </div>
+        </fieldset>
+      </div>
+
+
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

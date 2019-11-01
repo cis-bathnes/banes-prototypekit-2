@@ -1,0 +1,61 @@
+{% extends "layout_unbranded.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+    {{ govukBackLink({
+          text: "Back",
+          href: "javascript: window.history.go(-1)"
+        }) }}
+
+    <form action="/child_details" method="post" class="form">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="role-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">
+              What is your role?
+            </h1>
+          </legend>
+          <span id="role-hint" class="govuk-hint">
+            <!-- This includes changing your last name or spelling your name differently. -->
+          </span>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="job-title">
+              Your job title or role
+            </label>
+            <input class="govuk-input" id="job-title" name="job-title" type="text" spellcheck="false">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="agency">
+              The agency or organisation you work for
+            </label>
+            <span id="agency-hint" class="govuk-hint">
+              <!-- We’ll only use this to send you a receipt -->
+            </span>
+            <input class="govuk-input" id="agency" name="agency" type="text" aria-describedby="agency-hint"
+              autocomplete="agency" spellcheck="false">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="family-role">
+              Your role with the family
+            </label>
+            <textarea class="govuk-textarea" id="family-role" name="family-role" rows="5"> </textarea>
+          </div>
+        </fieldset>
+      </div>
+
+      <button class=" govuk-button" data-module="govuk-button">Continue</button>
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
