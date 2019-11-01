@@ -38,4 +38,16 @@ router.post('/child-known', function (req, res) {
 })
 
 
+router.post('/concerning-issues', function (req, res) {
+
+  let answer = req.session.data['concerning-issues']
+
+  if (answer === 'significant-harm') {
+    res.redirect('/significant_harm')
+  } else {
+    res.redirect('/concerning-issue')
+  }
+})
+
+
 module.exports = router
