@@ -1,0 +1,90 @@
+
+{% extends "layout_unbranded.html" %}
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+        {{ govukBackLink({
+          text: "Back",
+          href: "#"
+        }) }}
+
+    	{% from "govuk/components/table/macro.njk" import govukTable %}
+
+
+<h1 class="govuk-heading-xl">Based on your concerns, we will now ask you to fill out an Early Help request</h1>
+<p class="govuk-body">Early Help services provide effective support to children and young people as soon as needs start to be identified, and to bring about change to prevent these from escalating and leading to poor outcomes.
+  </p>
+
+<p class="govuk-body">All your previous answers will be saved.
+  </p>
+
+<p class="govuk-body">We will ask you for more detail about your concerns and pass these onto the Early Help team</p>
+
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+  idPrefix: "sign-in",
+  name: "sign-in",
+  fieldset: {
+    legend: {
+      text: "Have you gained consent from the family?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: "The Early Help team will need to involve the family in any next steps they take and will need their co-operation."
+  },
+  items: [
+    {
+      value: "government-gateway",
+      text: "Yes, I have consent from the family",
+      label: {
+        classes: "govuk-label--s"
+      }
+    },
+    {
+      value: "govuk-verify",
+      text: "No, I have not got consent from the family",
+      label: {
+        classes: "govuk-label--s"
+      },
+      hint: {
+        text: "Please gain consent from the family before continuing."
+      }
+    }
+  ]
+}) }}
+
+<div class="govuk-inset-text govuk-visually-hidden">
+    <div class="govuk-form-group">
+        <label class="govuk-label" for="reason-no-consent">
+          Please state why?
+        </label>
+        <textarea class="govuk-textarea" id="reason-no-consent" name="reason-no-consent" rows="5"></textarea>
+      </div>
+  </div>
+
+
+
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{{ govukButton({
+  text: "Continue",
+  href: "your_relationship.html",
+  isStartButton: false
+}) }}
+      
+    </div>
+</div>
+
+{% endblock %}

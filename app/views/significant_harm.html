@@ -1,0 +1,115 @@
+
+{% extends "layout_unbranded.html" %}
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "your_concerns.html"
+}) }}
+  
+
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+{{ govukCheckboxes({
+  idPrefix: "nationality",
+  name: "nationality",
+  fieldset: {
+    legend: {
+      text: "What sort of significant harm is this child at risk of?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--xl"
+    }
+  },
+  hint: {
+    text: "Select all that apply"
+  },
+  items: [
+    {
+      value: "emotional_abuse",
+      text: "Emotional abuse",
+      hint: {
+        text: "The persistent emotional maltreatment of a child such as to cause severe and persistent adverse effects on the child’s emotional development."
+      }
+    },
+    {
+      value: "physical_abuse",
+      text: "Physical abuse",
+      hint: {
+        text: "The persistent emotional maltreatment of a child such as to cause severe and persistent adverse effects on the child’s emotional development."
+      }
+    },
+    {
+      value: "sexual_abuse",
+      text: "Sexual abuse",
+      hint: {
+        text: "The persistent emotional maltreatment of a child such as to cause severe and persistent adverse effects on the child’s emotional development."
+      }
+    },
+    {
+      value: "serious_neglect",
+      text: "Serious neglect",
+      hint: {
+        text: "The persistent emotional maltreatment of a child such as to cause severe and persistent adverse effects on the child’s emotional development."
+      }
+    },
+    {
+      value: "child_exploitation",
+      text: "Child exploitation",
+      hint: {
+        text: "The persistent emotional maltreatment of a child such as to cause severe and persistent adverse effects on the child’s emotional development."
+      }
+    },
+    {
+      value: "radicalisation",
+      text: "Radicalisation",
+      hint: {
+        text: "The persistent emotional maltreatment of a child such as to cause severe and persistent adverse effects on the child’s emotional development."
+      }
+    }
+    
+  ]
+}) }}
+
+
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+  idPrefix: "something-else",
+  name: "where-do-you-live",
+  
+  items: [
+    {
+      divider: "or"
+    },
+    {
+      value: "other",
+      text: "None of the above, it's something else"
+    }
+  ]
+}) }}
+
+
+     
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+
+{{ govukButton({
+  text: "Continue",
+  href: "/check-your-answers",
+  isStartButton: false
+}) }}
+
+      
+    </div>
+</div>
+
+{% endblock %}

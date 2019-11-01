@@ -1,0 +1,132 @@
+
+{% extends "layout_unbranded.html" %}
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+
+
+
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+      {% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
+      {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+
+      {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+        {{ govukBackLink({
+          text: "Back",
+          href: "your_relationship"
+        }) }}
+      
+        <form action="/check-your-answers" method="post" class="form">
+
+
+          <div class="govuk-form-group">
+              <label class="govuk-label" for="professional-name">
+                Your name
+              </label>
+            
+              <input class="govuk-input govuk-!-width-three-quarters" id="professional-name" name="professional-name" type="text" value="{{ data['professional-name'] }}" type="text">
+            </div>
+  
+          <button class="govuk-button" data-module="govuk-button">Continue</button>
+  
+        </form>
+
+
+
+
+
+      {% call govukFieldset({
+        legend: {
+          text: "Professional contact details?",
+          classes: "govuk-fieldset__legend--xl",
+          isPageHeading: true
+        }
+      }) %}
+      
+        {{ govukInput({
+          label: {
+            html: 'Your name'
+          },
+          id: "professional-name",
+          name: "professional-name",
+          classes: "govuk-!-width-three-quarters",
+          value: ""
+        }) }}
+      
+        {{ govukInput({
+          label: {
+            html: 'Your job title or role'
+          },
+          id: "professional-job",
+          name: "professional-job",
+          classes: "govuk-!-width-three-quarters"
+        }) }}
+      
+        {{ govukInput({
+          label: {
+            text: "The agency or organisation you work for"
+          },
+          id: "professional-agency",
+          name: "professional-agency",
+          classes: "govuk-!-width-three-quarters"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Your address"
+          },
+          id: "professional-adress",
+          name: "professional-address",
+          classes: "govuk-!-width-three-quarters"
+        }) }}
+      
+        {{ govukInput({
+          label: {
+            text: "Your email"
+          },
+          id: "professional-email",
+          name: "professional-email",
+          classes: "govuk-!-width-three-quarters"
+        }) }}
+      
+        {{ govukInput({
+          label: {
+            text: "Your phone number"
+          },
+          id: "professional-phone",
+          name: "professional-phone",
+          classes: "govuk-!-width-three-quarters"
+        }) }}
+
+        {{ govukTextarea({
+          name: "professional-role-family",
+          id: "professional-role-family",
+          label: {
+            text: "Your role with the family"
+          }
+        }) }}
+      
+      {% endcall %}
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+
+{{ govukButton({
+  text: "Continue",
+  href: "your_concerns.html",
+  isStartButton: false
+}) }}
+
+      
+    </div>
+</div>
+
+{% endblock %}

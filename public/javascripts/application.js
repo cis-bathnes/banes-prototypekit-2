@@ -29,4 +29,19 @@ $(document).ready(function () {
             element.className = classes.join(" ");
     }
   }
+
 })
+
+$('#sign-in-2').click(function() {
+  if($('#sign-in-2').is(':checked')) { 
+    $('.govuk-inset-text').removeClass('govuk-visually-hidden'); }
+
+  });
+
+  $('#sign-in').click(function() {
+    if($('#sign-in').is(':checked')) { 
+      $('.govuk-inset-text').addClass('govuk-visually-hidden'); }
+  
+    });
+
+

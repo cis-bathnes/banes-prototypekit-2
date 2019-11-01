@@ -3,11 +3,18 @@
 	border-top: 5px solid #00aeef
 }
 
+
 .footer-wrapper {
 	position: relative;
-	max-width: 1100px;
+	max-width: 960px;
 	margin: 0 auto;
 	padding: 2em 15px
+}
+
+@include govuk-media-query($from: desktop){
+  .footer-wrapper{
+    max-width: 1100px;
+  }
 }
 
 @media (min-width:48.0625em) {

@@ -1,0 +1,87 @@
+
+{% extends "layout_unbranded.html" %}
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "your_relationship.html"
+}) }}
+  
+<h1 class="govuk-heading-xl govuk-!-margin-bottom-0 ">How concerned are you?</h1>
+<div class="breakout-box">
+
+{% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
+
+{{ govukWarningText({
+  text: "If you are currently witnessing a child being harmed or in a situation of immediate risk call 999'",
+  iconFallbackText: "Warning"
+}) }}
+</div>
+
+     
+
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+  idPrefix: "how-concerned",
+  name: "how-concerned",
+  hint: {
+    text: "Pick one that describes you best:"
+  },
+  items: [
+    {
+      value: "significant-harm",
+      text: "I'm concerned that a child is suffering or likely to suffer significant harm",
+      label: {
+        classes: "govuk-label--s"
+      },
+      hint: {
+        text: "Choose this if you want to protect a child from abuse or serious neglect, or if you feel require the child requires acute services or care away from home."
+      }
+    },
+    {
+      value: "childs-wellbeing",
+      text: "I'm concerned about a child's wellbeing. They have complex needs and other support hasn't worked",
+      label: {
+        classes: "govuk-label--s"
+      },
+      hint: {
+        text: "Choose this if you feel a child would benefit from co-ordinated programme of support from more than one agency (e.g. using the Early Help Assessment, or Team Around The Child/Family)."
+      }
+    },
+
+    {
+      value: "early-help",
+      text: "I'm looking to get support for a child (or their family) before their needs escalate",
+      label: {
+        classes: "govuk-label--s"
+      },
+      hint: {
+        text: "Choose this if you feel a family requires additional support from a single agency to prevent their needs escalating."
+      }
+    }
+  ]
+}) }}
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+
+{{ govukButton({
+  text: "Continue",
+  href: "significant_harm.html",
+  isStartButton: false
+}) }}
+
+      
+    </div>
+</div>
+
+{% endblock %}

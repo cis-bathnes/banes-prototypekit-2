@@ -67,6 +67,22 @@ router.post('/examples/branching/over-18-answer', function (req, res) {
   }
 })
 
+
+
+  // if professional collect contact details
+  
+router.post('/your_relationship', function (req, res){
+
+  let isProfessional = req.session.data['realationship']
+
+  if (isProfessional === 'professional'){
+    res.redirect('/professional-contact-details.html')
+  } else {
+    res.redirect('/your_concerns')
+  }
+
+})
+
 module.exports = router
 
 // Strip off markdown extensions if present and redirect

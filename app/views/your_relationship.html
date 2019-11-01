@@ -1,0 +1,65 @@
+
+{% extends "layout_unbranded.html" %}
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+        {{ govukBackLink({
+          text: "Back",
+          href: "index"
+        }) }}
+
+      <form action="/is-professional" method="post" class="form">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="sign-in-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+              <h1 class="govuk-fieldset__heading">
+                What's your relationship to the child or young person?
+              </h1>
+            </legend>
+            <span id="relationship-to-child-hint" class="govuk-hint">
+              Select one that best describes you.
+            </span>
+            <div class="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="is-professional" name="is-professional" type="radio" value="concerned-family">
+                <label class="govuk-label govuk-radios__label govuk-label--s" for="is-professional">
+                  I'm a family member or friend
+                </label>
+                
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="is-professional-2" name="is-professional" type="radio" value="concerned-citizen">
+                <label class="govuk-label govuk-radios__label govuk-label--s" for="is-professional-2">
+                  I'm a concerned member of the public
+                </label>
+              
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="is-professional-3" name="is-professional" type="radio" value="professional">
+                <label class="govuk-label govuk-radios__label govuk-label--s" for="is-professional-3">
+                  I'm a professional who has a safeguarding concern
+                </label>
+              
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+      
+    </div>
+</div>
+
+{% endblock %}
