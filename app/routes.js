@@ -45,7 +45,19 @@ router.post('/concerning-issues', function (req, res) {
   if (answer === 'significant-harm') {
     res.redirect('/significant_harm')
   } else {
-    res.redirect('/concerning-issue')
+    res.redirect('/issues_of_concern')
+  }
+})
+
+
+router.post('/harm', function (req, res) {
+
+  let answer = req.session.data['harm']
+
+  if (answer === 'none') {
+    res.redirect('/issues_of_concern')
+  } else {
+    res.redirect('/outcome_1')
   }
 })
 

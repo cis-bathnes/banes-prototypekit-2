@@ -18,48 +18,44 @@ GOV.UK Prototype Kit
     {% from "govuk/components/table/macro.njk" import govukTable %}
 
 
-    <h1 class="govuk-heading-xl">Based on your concerns, we will now ask you to fill out an Early Help request</h1>
-    <p class="govuk-body">Early Help services provide effective support to children and young people as soon as needs
-      start to be identified, and to bring about change to prevent these from escalating and leading to poor outcomes.
-    </p>
-
-    <p class="govuk-body">All your previous answers will be saved.
-    </p>
-
-    <p class="govuk-body">We will ask you for more detail about your concerns and pass these onto the Early Help team
+    <h1 class="govuk-heading-xl">Based on your concerns, we will now ask you to fill out a Safeguarding Request</h1>
+    <p class="govuk-body">All your previous answers will be saved. We will ask you for more detail about your concerns and pass these onto the Childcare Duty Team who will aim to reply within 48 hours.
     </p>
 
     {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
     {{ govukRadios({
-  idPrefix: "sign-in",
-  name: "sign-in",
+  idPrefix: "outcome-1",
+  name: "outcome-1",
   fieldset: {
     legend: {
-      text: "Have you gained consent from the family?",
+      text: "Have you informed the family?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m"
     }
   },
   hint: {
-    text: "The Early Help team will need to involve the family in any next steps they take and will need their co-operation."
+    text: "Have you informed the family that you are making this request for service and that we will complete welfare checks with other agencies?."
   },
   items: [
     {
-      value: "government-gateway",
+      value: "yes",
       text: "Yes, I have consent from the family",
       label: {
         classes: "govuk-label--s"
+      },
+      hint: {
+        text: "By selecting this you are also confirming that you have informed the family that we will complete welfare check with other agencies."
       }
     },
     {
-      value: "govuk-verify",
+      value: "no",
       text: "No, I have not got consent from the family",
       label: {
         classes: "govuk-label--s"
       },
       hint: {
-        text: "Please gain consent from the family before continuing."
+        text: "You can only proceed without informing the parents or carers if it would put the child at risk of harm."
       }
     }
   ]
@@ -81,7 +77,7 @@ GOV.UK Prototype Kit
 
     {{ govukButton({
   text: "Continue",
-  href: "your_relationship.html",
+  href: "rfs",
   isStartButton: false
 }) }}
 

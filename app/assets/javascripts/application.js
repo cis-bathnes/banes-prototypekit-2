@@ -32,14 +32,14 @@ $(document).ready(function () {
 
 })
 
-$('#sign-in-2').click(function() {
-  if($('#sign-in-2').is(':checked')) { 
+$('#outcome-1-2').click(function() {
+  if($('#outcome-1-2').is(':checked')) { 
     $('.govuk-inset-text').removeClass('govuk-visually-hidden'); }
 
   });
 
-  $('#sign-in').click(function() {
-    if($('#sign-in').is(':checked')) { 
+  $('#outcome-1').click(function() {
+    if($('#outcome-1').is(':checked')) { 
       $('.govuk-inset-text').addClass('govuk-visually-hidden'); }
   
     });
