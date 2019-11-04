@@ -1,0 +1,69 @@
+{% extends "layout_unbranded.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+    {{ govukBackLink({
+  text: "Back",
+  href: "javascript: window.history.go(-1)"
+}) }}
+
+<h1 class="govuk-heading-xl">What impact do you feel this is currently having on the child or young person?</h1>
+
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+  idPrefix: "impact",
+  name: "food",
+  fieldset: {
+    legend: {
+      text: "Food (1 of 3 concerns you identified)",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: "Pick the impact you think this is having on the child:"
+  },
+  items: [
+    {
+      value: "impact-malnourishment-ill-health",
+      text: "Potential for malnourishment and ill health as consistency of diet not maintained."
+    },
+    {
+      value: "impact-carer-prepatation-of-meals",
+      text: "Carer continues to be inconsistent in preparation of meals, child’s
+      weight not maintained or growing concerns for obesity. Specialist diets not maintained and so impacting on health"
+    },
+    {
+      value: "impact-child-weight-loses",
+      text: "Child loses weight, unable to concentrate at school/college, clothes are increasingly ill-fitting. Health affected by inappropriate diet"
+    },
+    {
+      value: "imapct-acute-intensive-care",
+      text: "Child requires acute intensive care and clear that the child has suffered significant harm and is at risk of further harm"
+    }
+  ]
+}) }}
+
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+
+    {{ govukButton({
+  text: "Continue",
+  href: "#",
+  isStartButton: false
+}) }}
+
+
+  </div>
+</div>
+
+{% endblock %}
