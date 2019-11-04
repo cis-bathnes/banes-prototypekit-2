@@ -14,17 +14,20 @@ GOV.UK Prototype Kit
   text: "Back",
   href: "javascript: window.history.go(-1)"
 }) }}
+    <form action="/concerning-impacts" method="post" class="form">
 
-<h1 class="govuk-heading-xl">What impact do you feel this is currently having on the child or young person?</h1>
+      <h1 class="govuk-heading-xl">What impact do you feel this is currently having on the child or young person?</h1>
 
-{% from "govuk/components/radios/macro.njk" import govukRadios %}
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
-{{ govukRadios({
+      {% set legend = "Handling of/response to baby " + data['concerns-impacts-current-legend'] %}
+
+      {{ govukRadios({
   idPrefix: "impact-handling-of-response-to-baby",
   name: "impact-handling-of-response-to-baby",
   fieldset: {
     legend: {
-      text: "Handling of/response to baby (1 of 3 concerns you identified)",
+      text: legend,
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m"
     }
@@ -52,15 +55,9 @@ GOV.UK Prototype Kit
   ]
 }) }}
 
+      <button class=" govuk-button" data-module="govuk-button">Continue</button>
 
-    {% from "govuk/components/button/macro.njk" import govukButton %}
-
-    {{ govukButton({
-  text: "Continue",
-  href: "#",
-  isStartButton: false
-}) }}
-
+    </form>
 
   </div>
 </div>

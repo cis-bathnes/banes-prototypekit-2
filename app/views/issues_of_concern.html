@@ -1,332 +1,368 @@
-
 {% extends "layout_unbranded.html" %}
 {% block pageTitle %}
-  GOV.UK Prototype Kit
+GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-        {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
 
-      {{ govukBackLink({
+    {{ govukBackLink({
         text: "Back",
         href: "javascript: window.history.go(-1)"
       }) }}
-  
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-2 ">What does your concern relate to?</h1>
 
-      <form action="/concerning-impacts" method="post" class="form">
-   
-      
-<div class="govuk-form-group">
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-2 ">What does your concern relate to?</h1>
 
-  <fieldset class="govuk-fieldset" aria-describedby="issues-of-concern-hint">
-  
-
-  <span id="issues-of-concern-hint" class="govuk-hint">
-    Select all that apply.
-  </span>
-
-<h2 class="govuk-heading-m govuk-!-margin-top-6 govuk-!-margin-bottom-6">Child development needs</h2>
-  <div class="govuk-checkboxes">
-    
-    <div class="govuk-checkboxes__item">
-      <input class="govuk-checkboxes__input" id="issues-of-concern" name="issues-of-concern" type="checkbox" value="food" aria-describedby="issues-of-concern-item-hint">
-      <label class="govuk-label govuk-checkboxes__label" for="issues-of-concern">
-        Food
-      </label>
-      
-      <span id="issues-of-concern-item-hint" class="govuk-hint govuk-checkboxes__hint">
-        Parent/carer not providing regular and/or adequate food and drink
-      </span>
-      
-    </div>
-    
-    <div class="govuk-checkboxes__item">
-      <input class="govuk-checkboxes__input" id="issues-of-concern-2" name="issues-of-concern" type="checkbox" value="sexual_relationships" aria-describedby="issues-of-concern-2-item-hint">
-      <label class="govuk-label govuk-checkboxes__label" for="issues-of-concern-2">
-        Sexual Relationships
-      </label>
-      
-      <span id="issues-of-concern-2-item-hint" class="govuk-hint govuk-checkboxes__hint">
-        Child / Young Person does not demonstrate healthy sexual and emotional relationships or have a stable friendship group appropriate to age
-      </span>
-      
-    </div>
-    
-    
-    <div class="govuk-checkboxes__item">
-      <input class="govuk-checkboxes__input" id="issues-of-concern-3" name="issues-of-concern" type="checkbox" value="positive_values" aria-describedby="issues-of-concern-3-item-hint">
-      <label class="govuk-label govuk-checkboxes__label" for="issues-of-concern-3">
-        Positive Values
-      </label>
-      
-      <span id="issues-of-concern-3-item-hint" class="govuk-hint govuk-checkboxes__hint">
-        Parent/carer does not ensure child has positive values, understands right from wrong, is respectful to others, shows kindness
-      </span>
-      
-    </div>
-    
-    <div class="govuk-checkboxes__item">
-      <input class="govuk-checkboxes__input" id="issues-of-concern-4" name="issues-of-concern" type="checkbox" value="physical_abuse" aria-describedby="issues-of-concern-4-item-hint">
-      <label class="govuk-label govuk-checkboxes__label" for="issues-of-concern-4">
-        Physical Abuse
-      </label>
-      
-      <span id="issues-of-concern-4-item-hint" class="govuk-hint govuk-checkboxes__hint">
-        Parent/carer chastises child inappropriately, does not use positive reinforcement. Withdrawal of 'treats' is not proportionate to the misdemeanour
-      </span>
-      
-    </div>
-    
-    <div class="govuk-checkboxes__item">
-      <input class="govuk-checkboxes__input" id="issues-of-concern-5" name="issues-of-concern" type="checkbox" value="disability_illness" aria-describedby="issues-of-concern-5-item-hint">
-      <label class="govuk-label govuk-checkboxes__label" for="issues-of-concern-5">
-        Disability and illness
-      </label>
-      
-      <span id="issues-of-concern-5-item-hint" class="govuk-hint govuk-checkboxes__hint">
-        Parent/carer does not comply with needs relating to child’s disability or illness
-      </span>
-      
-    </div>
-    
-    <div class="govuk-checkboxes__item">
-      <input class="govuk-checkboxes__input" id="issues-of-concern-6" name="issues-of-concern" type="checkbox" value="childs_emotional_wellbeing" aria-describedby="issues-of-concern-6-item-hint">
-      <label class="govuk-label govuk-checkboxes__label" for="issues-of-concern-6">
-        Child’s emotional wellbeing
-      </label>
-      
-      <span id="issues-of-concern-6-item-hint" class="govuk-hint govuk-checkboxes__hint">
-        Child does not engage in age appropriate activities and displays age inappropriate behaviours, child has a negative sense of self and resilience
-      </span>
-      
-    </div>
-
-    <h2 class="govuk-heading-m govuk-!-margin-top-6 govuk-!-margin-bottom-6">Parent capacity</h2>
-    
-    <div class="govuk-checkboxes__item">
-      <input class="govuk-checkboxes__input" id="issues-of-concern-7" name="issues-of-concern" type="checkbox" value="adult_arguments_violence" aria-describedby="issues-of-concern-7-item-hint">
-      <label class="govuk-label govuk-checkboxes__label" for="issues-of-concern-7">
-        Adult arguments and violence
-      </label>
-      
-      <span id="issues-of-concern-7-item-hint" class="govuk-hint govuk-checkboxes__hint">
-        Parent/carers argue aggressively and are physically abusive in front of the children
-      </span>
-      
-    </div>
-     
-    <div class="govuk-checkboxes__item">
-      <input class="govuk-checkboxes__input" id="issues-of-concern-8" name="issues-of-concern" type="checkbox" value="care_by_other_adults" aria-describedby="issues-of-concern-8-item-hint">
-      <label class="govuk-label govuk-checkboxes__label" for="issues-of-concern-8">
-        Care by other adults
-      </label>
-      
-      <span id="issues-of-concern-8-item-hint" class="govuk-hint govuk-checkboxes__hint">
-        Child is often in the care of an under-16. Parent or child not always aware of each other’s whereabouts
-      </span>
-      
-    </div>
-    
-    <div class="govuk-checkboxes__item">
-      <input class="govuk-checkboxes__input" id="issues-of-concern-9" name="issues-of-concern" type="checkbox" value="parent_not_seeking_appropriate_advice" aria-describedby="issues-of-concern-9-item-hint">
-      <label class="govuk-label govuk-checkboxes__label" for="issues-of-concern-9">
-        Parent(s) not seeking appropriate advice
-      </label>
-      
-      <span id="issues-of-concern-9-item-hint" class="govuk-hint govuk-checkboxes__hint">
-        Mother not seeking access to maternity services if pregnant. Advice not sought from professionals on matters about child’s health, dental/optical and all immunisations
-      </span>
-      
-    </div>
-    
-    <div class="govuk-checkboxes__item">
-      <input class="govuk-checkboxes__input" id="issues-of-concern-10" name="issues-of-concern" type="checkbox" value="safe_sleeping_arrangements" aria-describedby="issues-of-concern-10-item-hint">
-      <label class="govuk-label govuk-checkboxes__label" for="issues-of-concern-10">
-        Safe sleeping arrangements
-      </label>
-      
-      <span id="issues-of-concern-10-item-hint" class="govuk-hint govuk-checkboxes__hint">
-        There is not suitable bedding or sleeping arrangements. Parent/carer shows lack of awareness of room temperature, sleeping position of the baby and will smoke in the home
-      </span>
-      
-    </div>
-    
-    <div class="govuk-checkboxes__item">
-      <input class="govuk-checkboxes__input" id="issues-of-concern-11" name="issues-of-concern" type="checkbox" value="Responding to adolescents" aria-describedby="issues-of-concern-11-item-hint">
-      <label class="govuk-label govuk-checkboxes__label" for="issues-of-concern-11">
-        Responding to adolescents
-      </label>
-      
-      <span id="issues-of-concern-11-item-hint" class="govuk-hint govuk-checkboxes__hint">
-        Adolescents’ needs are not addressed appropriately, where risky behaviour occurs it is not identified and responded to appropriately by the parent/carer
-      </span>
-      
-    </div>
-    
-    <div class="govuk-checkboxes__item">
-      <input class="govuk-checkboxes__input" id="issues-of-concern-12" name="issues-of-concern" type="checkbox" value="substance_abuse" aria-describedby="issues-of-concern-12-item-hint">
-      <label class="govuk-label govuk-checkboxes__label" for="issues-of-concern-12">
-        Substance Abuse
-      </label>
-      
-      <span id="issues-of-concern-12-item-hint" class="govuk-hint govuk-checkboxes__hint">
-        Parent/carer misuses drugs and/or alcohol
-      </span>
-      
-    </div>
-    
-    <div class="govuk-checkboxes__item">
-      <input class="govuk-checkboxes__input" id="issues-of-concern-13" name="issues-of-concern" type="checkbox" value="child_supervision" aria-describedby="issues-of-concern-13-item-hint">
-      <label class="govuk-label govuk-checkboxes__label" for="issues-of-concern-13">
-        Child supervision
-      </label>
-      
-      <span id="issues-of-concern-13-item-hint" class="govuk-hint govuk-checkboxes__hint">
-        Appropriate supervision is not provided in line with age and stage of development
-      </span>
-      
-    </div>
-    
-    <div class="govuk-checkboxes__item">
-      <input class="govuk-checkboxes__input" id="issues-of-concern-14" name="issues-of-concern" type="checkbox" value="response_to_baby" aria-describedby="issues-of-concern-14-item-hint">
-      <label class="govuk-label govuk-checkboxes__label" for="issues-of-concern-14">
-        Response to baby
-      </label>
-      
-      <span id="issues-of-concern-14-item-hint" class="govuk-hint govuk-checkboxes__hint">
-        Parent/carer is not attuned to their baby, does not spend time, cooing and smiling, holding or behaving warmly
-      </span>
-      
-    </div>
-    
-    <div class="govuk-checkboxes__item">
-      <input class="govuk-checkboxes__input" id="issues-of-concern-15" name="issues-of-concern" type="checkbox" value="warmth_and_care_of_child" aria-describedby="issues-of-concern-15-item-hint">
-      <label class="govuk-label govuk-checkboxes__label" for="issues-of-concern-15">
-        Warmth and care of child
-      </label>
-      
-      <span id="issues-of-concern-15-item-hint" class="govuk-hint govuk-checkboxes__hint">
-        Parent/carer responds inappropriately if child distressed or hurt. Does not give consistent demonstrations of love and care
-      </span>
-      
-    </div>
-    
-    
-    <div class="govuk-checkboxes__item">
-      <input class="govuk-checkboxes__input" id="issues-of-concern-16" name="issues-of-concern" type="checkbox" value="safety_awareness" aria-describedby="issues-of-concern-16-item-hint">
-      <label class="govuk-label govuk-checkboxes__label" for="issues-of-concern-16">
-        Safety awareness
-      </label>
-      
-      <span id="issues-of-concern-16-item-hint" class="govuk-hint govuk-checkboxes__hint">
-        Parent/carer does not demonstrate any evidence of safety awareness, equipment use and maintenance
-      </span>
-      
-    </div>
-    
-    <div class="govuk-checkboxes__item">
-      <input class="govuk-checkboxes__input" id="issues-of-concern-17" name="issues-of-concern" type="checkbox" value="adult_mental_health" aria-describedby="issues-of-concern-17-item-hint">
-      <label class="govuk-label govuk-checkboxes__label" for="issues-of-concern-17">
-        Adult Mental Health
-      </label>
-      
-      <span id="issues-of-concern-17-item-hint" class="govuk-hint govuk-checkboxes__hint">
-        Parent/carer shows signs of mental health issues, either long term complex or short term low mood/anxiety
-      </span>
-      
-    </div>
-    
-    <div class="govuk-checkboxes__item">
-      <input class="govuk-checkboxes__input" id="issues-of-concern-18" name="issues-of-concern" type="checkbox" value="parental_control_and_boundaries" aria-describedby="issues-of-concern-18-item-hint">
-      <label class="govuk-label govuk-checkboxes__label" for="issues-of-concern-18">
-        Parental Control and Boundaries
-      </label>
-      
-      <span id="issues-of-concern-18-item-hint" class="govuk-hint govuk-checkboxes__hint">
-        Parent/carer does not provide consistent boundaries or ensure child understands how to behave or set limits
-      </span>
-      
-    </div>
-    
-    <h2 class="govuk-heading-m govuk-!-margin-top-6 govuk-!-margin-bottom-6">Family environment</h2>
+    <form action="/concerning-impacts" method="post" class="form">
 
 
-    <div class="govuk-checkboxes__item">
-      <input class="govuk-checkboxes__input" id="issues-of-concern-19" name="issues-of-concern" type="checkbox" value="housing" aria-describedby="issues-of-concern-19-item-hint">
-      <label class="govuk-label govuk-checkboxes__label" for="issues-of-concern-19">
-        Housing
-      </label>
-      
-      <span id="issues-of-concern-19-item-hint" class="govuk-hint govuk-checkboxes__hint">
-        Accommodation does not have all essential amenities and is in a state of disrepair. Child has had too many unnecessary moves
-      </span>
-      
-    </div>
-    
-    <div class="govuk-checkboxes__item">
-      <input class="govuk-checkboxes__input" id="issues-of-concern-20" name="issues-of-concern" type="checkbox" value="hygiene" aria-describedby="issues-of-concern-20-item-hint">
-      <label class="govuk-label govuk-checkboxes__label" for="issues-of-concern-20">
-        Hygiene
-      </label>
-      
-      <span id="issues-of-concern-20-item-hint" class="govuk-hint govuk-checkboxes__hint">
-        The child is not clean, not washed daily, teeth not brushed and skin conditions are not treated appropriately
-      </span>
-      
-    </div>
-    
-    <div class="govuk-checkboxes__item">
-      <input class="govuk-checkboxes__input" id="issues-of-concern-21" name="issues-of-concern" type="checkbox" value="animal_neglect_or_danger" aria-describedby="issues-of-concern-21-item-hint">
-      <label class="govuk-label govuk-checkboxes__label" for="issues-of-concern-21">
-        Animal neglect or danger
-      </label>
-      
-      <span id="issues-of-concern-21-item-hint" class="govuk-hint govuk-checkboxes__hint">
-        Animals are not well cared for and could present a danger to children or adults
-      </span>
-      
-    </div>
-    
-    <div class="govuk-checkboxes__item">
-      <input class="govuk-checkboxes__input" id="issues-of-concern-22" name="issues-of-concern" type="checkbox" value="Child’s clothing" aria-describedby="issues-of-concern-22-item-hint">
-      <label class="govuk-label govuk-checkboxes__label" for="issues-of-concern-22">
-        Child’s clothing
-      </label>
-      
-      <span id="issues-of-concern-22-item-hint" class="govuk-hint govuk-checkboxes__hint">
-        Child is dressed inappropriately for the weather, clothing is dirty and inappropriate for the child’s age
-      </span>
-      
-    </div>
-    
-    <div class="govuk-checkboxes__item">
-      <input class="govuk-checkboxes__input" id="issues-of-concern-23" name="issues-of-concern" type="checkbox" value="financial_hardship" aria-describedby="issues-of-concern-23-item-hint">
-      <label class="govuk-label govuk-checkboxes__label" for="issues-of-concern-23">
-        Financial Hardship
-      </label>
-      
-      <span id="issues-of-concern-23-item-hint" class="govuk-hint govuk-checkboxes__hint">
-        Family are experiencing debt and other financial hardship
-      </span>
-      
-    </div>
-    
-    <button class="govuk-button govuk-!-margin-top-6" data-module="govuk-button">Continue</button>
+      <div class="govuk-form-group">
 
-  </form>
-    
+        <fieldset class="govuk-fieldset" aria-describedby="issues-of-concern-hint">
+
+
+          <span id="issues-of-concern-hint" class="govuk-hint">
+            Select all that apply.
+          </span>
+
+          <h2 class="govuk-heading-m govuk-!-margin-top-6 govuk-!-margin-bottom-6">Child development needs</h2>
+          <div class="govuk-checkboxes">
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="issues-of-concern" name="issues-of-concern" type="checkbox"
+                value="food" aria-describedby="issues-of-concern-item-hint">
+              <label class="govuk-label govuk-checkboxes__label" for="issues-of-concern">
+                Food
+              </label>
+
+              <span id="issues-of-concern-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                Parent/carer not providing regular and/or adequate food and drink
+              </span>
+
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="issues-of-concern-2" name="issues-of-concern" type="checkbox"
+                value="sexual_relationships" aria-describedby="issues-of-concern-2-item-hint">
+              <label class="govuk-label govuk-checkboxes__label" for="issues-of-concern-2">
+                Sexual Relationships
+              </label>
+
+              <span id="issues-of-concern-2-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                Child / Young Person does not demonstrate healthy sexual and emotional relationships or have a stable
+                friendship group appropriate to age
+              </span>
+
+            </div>
+
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="issues-of-concern-3" name="issues-of-concern" type="checkbox"
+                value="positive_values" aria-describedby="issues-of-concern-3-item-hint">
+              <label class="govuk-label govuk-checkboxes__label" for="issues-of-concern-3">
+                Positive Values
+              </label>
+
+              <span id="issues-of-concern-3-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                Parent/carer does not ensure child has positive values, understands right from wrong, is respectful to
+                others, shows kindness
+              </span>
+
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="issues-of-concern-4" name="issues-of-concern" type="checkbox"
+                value="physical_abuse" aria-describedby="issues-of-concern-4-item-hint">
+              <label class="govuk-label govuk-checkboxes__label" for="issues-of-concern-4">
+                Physical Abuse
+              </label>
+
+              <span id="issues-of-concern-4-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                Parent/carer chastises child inappropriately, does not use positive reinforcement. Withdrawal of
+                'treats' is not proportionate to the misdemeanour
+              </span>
+
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="issues-of-concern-5" name="issues-of-concern" type="checkbox"
+                value="disability_and_illness" aria-describedby="issues-of-concern-5-item-hint">
+              <label class="govuk-label govuk-checkboxes__label" for="issues-of-concern-5">
+                Disability and illness
+              </label>
+
+              <span id="issues-of-concern-5-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                Parent/carer does not comply with needs relating to child’s disability or illness
+              </span>
+
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="issues-of-concern-6" name="issues-of-concern" type="checkbox"
+                value="childs_emotional_wellbeing" aria-describedby="issues-of-concern-6-item-hint">
+              <label class="govuk-label govuk-checkboxes__label" for="issues-of-concern-6">
+                Child’s emotional wellbeing
+              </label>
+
+              <span id="issues-of-concern-6-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                Child does not engage in age appropriate activities and displays age inappropriate behaviours, child has
+                a negative sense of self and resilience
+              </span>
+
+            </div>
+
+            <h2 class="govuk-heading-m govuk-!-margin-top-6 govuk-!-margin-bottom-6">Parent capacity</h2>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="issues-of-concern-7" name="issues-of-concern" type="checkbox"
+                value="adult_arguments_and_violence" aria-describedby="issues-of-concern-7-item-hint">
+              <label class="govuk-label govuk-checkboxes__label" for="issues-of-concern-7">
+                Adult arguments and violence
+              </label>
+
+              <span id="issues-of-concern-7-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                Parent/carers argue aggressively and are physically abusive in front of the children
+              </span>
+
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="issues-of-concern-8" name="issues-of-concern" type="checkbox"
+                value="care_by_other_adults" aria-describedby="issues-of-concern-8-item-hint">
+              <label class="govuk-label govuk-checkboxes__label" for="issues-of-concern-8">
+                Care by other adults
+              </label>
+
+              <span id="issues-of-concern-8-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                Child is often in the care of an under-16. Parent or child not always aware of each other’s whereabouts
+              </span>
+
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="issues-of-concern-9" name="issues-of-concern" type="checkbox"
+                value="parent_not_seeking_appropriate_advice" aria-describedby="issues-of-concern-9-item-hint">
+              <label class="govuk-label govuk-checkboxes__label" for="issues-of-concern-9">
+                Parent(s) not seeking appropriate advice
+              </label>
+
+              <span id="issues-of-concern-9-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                Mother not seeking access to maternity services if pregnant. Advice not sought from professionals on
+                matters about child’s health, dental/optical and all immunisations
+              </span>
+
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="issues-of-concern-10" name="issues-of-concern" type="checkbox"
+                value="safe_sleeping_arrangements" aria-describedby="issues-of-concern-10-item-hint">
+              <label class="govuk-label govuk-checkboxes__label" for="issues-of-concern-10">
+                Safe sleeping arrangements
+              </label>
+
+              <span id="issues-of-concern-10-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                There is not suitable bedding or sleeping arrangements. Parent/carer shows lack of awareness of room
+                temperature, sleeping position of the baby and will smoke in the home
+              </span>
+
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="issues-of-concern-11" name="issues-of-concern" type="checkbox"
+                value="Responding to adolescents" aria-describedby="issues-of-concern-11-item-hint">
+              <label class="govuk-label govuk-checkboxes__label" for="issues-of-concern-11">
+                Responding to adolescents
+              </label>
+
+              <span id="issues-of-concern-11-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                Adolescents’ needs are not addressed appropriately, where risky behaviour occurs it is not identified
+                and responded to appropriately by the parent/carer
+              </span>
+
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="issues-of-concern-12" name="issues-of-concern" type="checkbox"
+                value="substance_abuse" aria-describedby="issues-of-concern-12-item-hint">
+              <label class="govuk-label govuk-checkboxes__label" for="issues-of-concern-12">
+                Substance Abuse
+              </label>
+
+              <span id="issues-of-concern-12-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                Parent/carer misuses drugs and/or alcohol
+              </span>
+
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="issues-of-concern-13" name="issues-of-concern" type="checkbox"
+                value="child_supervision" aria-describedby="issues-of-concern-13-item-hint">
+              <label class="govuk-label govuk-checkboxes__label" for="issues-of-concern-13">
+                Child supervision
+              </label>
+
+              <span id="issues-of-concern-13-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                Appropriate supervision is not provided in line with age and stage of development
+              </span>
+
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="issues-of-concern-14" name="issues-of-concern" type="checkbox"
+                value="response_to_baby" aria-describedby="issues-of-concern-14-item-hint">
+              <label class="govuk-label govuk-checkboxes__label" for="issues-of-concern-14">
+                Response to baby
+              </label>
+
+              <span id="issues-of-concern-14-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                Parent/carer is not attuned to their baby, does not spend time, cooing and smiling, holding or behaving
+                warmly
+              </span>
+
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="issues-of-concern-15" name="issues-of-concern" type="checkbox"
+                value="warmth_and_care_of_child" aria-describedby="issues-of-concern-15-item-hint">
+              <label class="govuk-label govuk-checkboxes__label" for="issues-of-concern-15">
+                Warmth and care of child
+              </label>
+
+              <span id="issues-of-concern-15-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                Parent/carer responds inappropriately if child distressed or hurt. Does not give consistent
+                demonstrations of love and care
+              </span>
+
+            </div>
+
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="issues-of-concern-16" name="issues-of-concern" type="checkbox"
+                value="safety_awareness" aria-describedby="issues-of-concern-16-item-hint">
+              <label class="govuk-label govuk-checkboxes__label" for="issues-of-concern-16">
+                Safety awareness
+              </label>
+
+              <span id="issues-of-concern-16-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                Parent/carer does not demonstrate any evidence of safety awareness, equipment use and maintenance
+              </span>
+
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="issues-of-concern-17" name="issues-of-concern" type="checkbox"
+                value="adult_mental_health" aria-describedby="issues-of-concern-17-item-hint">
+              <label class="govuk-label govuk-checkboxes__label" for="issues-of-concern-17">
+                Adult Mental Health
+              </label>
+
+              <span id="issues-of-concern-17-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                Parent/carer shows signs of mental health issues, either long term complex or short term low
+                mood/anxiety
+              </span>
+
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="issues-of-concern-18" name="issues-of-concern" type="checkbox"
+                value="parental_control_and_boundaries" aria-describedby="issues-of-concern-18-item-hint">
+              <label class="govuk-label govuk-checkboxes__label" for="issues-of-concern-18">
+                Parental Control and Boundaries
+              </label>
+
+              <span id="issues-of-concern-18-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                Parent/carer does not provide consistent boundaries or ensure child understands how to behave or set
+                limits
+              </span>
+
+            </div>
+
+            <h2 class="govuk-heading-m govuk-!-margin-top-6 govuk-!-margin-bottom-6">Family environment</h2>
+
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="issues-of-concern-19" name="issues-of-concern" type="checkbox"
+                value="housing" aria-describedby="issues-of-concern-19-item-hint">
+              <label class="govuk-label govuk-checkboxes__label" for="issues-of-concern-19">
+                Housing
+              </label>
+
+              <span id="issues-of-concern-19-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                Accommodation does not have all essential amenities and is in a state of disrepair. Child has had too
+                many unnecessary moves
+              </span>
+
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="issues-of-concern-20" name="issues-of-concern" type="checkbox"
+                value="hygiene" aria-describedby="issues-of-concern-20-item-hint">
+              <label class="govuk-label govuk-checkboxes__label" for="issues-of-concern-20">
+                Hygiene
+              </label>
+
+              <span id="issues-of-concern-20-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                The child is not clean, not washed daily, teeth not brushed and skin conditions are not treated
+                appropriately
+              </span>
+
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="issues-of-concern-21" name="issues-of-concern" type="checkbox"
+                value="animal_neglect_or_danger" aria-describedby="issues-of-concern-21-item-hint">
+              <label class="govuk-label govuk-checkboxes__label" for="issues-of-concern-21">
+                Animal neglect or danger
+              </label>
+
+              <span id="issues-of-concern-21-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                Animals are not well cared for and could present a danger to children or adults
+              </span>
+
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="issues-of-concern-22" name="issues-of-concern" type="checkbox"
+                value="Child’s clothing" aria-describedby="issues-of-concern-22-item-hint">
+              <label class="govuk-label govuk-checkboxes__label" for="issues-of-concern-22">
+                Child’s clothing
+              </label>
+
+              <span id="issues-of-concern-22-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                Child is dressed inappropriately for the weather, clothing is dirty and inappropriate for the child’s
+                age
+              </span>
+
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="issues-of-concern-23" name="issues-of-concern" type="checkbox"
+                value="financial_hardship" aria-describedby="issues-of-concern-23-item-hint">
+              <label class="govuk-label govuk-checkboxes__label" for="issues-of-concern-23">
+                Financial Hardship
+              </label>
+
+              <span id="issues-of-concern-23-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                Family are experiencing debt and other financial hardship
+              </span>
+
+            </div>
+
+            <button class="govuk-button govuk-!-margin-top-6" data-module="govuk-button">Continue</button>
+
+    </form>
+
   </div>
   </fieldset>
 
 
 </div>
 
-  
-    </div>
+
+</div>
 </div>
 
 {% endblock %}

@@ -14,17 +14,20 @@ GOV.UK Prototype Kit
   text: "Back",
   href: "javascript: window.history.go(-1)"
 }) }}
+    <form action="/concerning-impacts" method="post" class="form">
 
-<h1 class="govuk-heading-xl">What impact do you feel this is currently having on the child or young person?</h1>
+      <h1 class="govuk-heading-xl">What impact do you feel this is currently having on the child or young person?</h1>
 
-{% from "govuk/components/radios/macro.njk" import govukRadios %}
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
-{{ govukRadios({
+      {% set legend = "Safety awareness " + data['concerns-impacts-current-legend'] %}
+
+      {{ govukRadios({
   idPrefix: "impact_safety_awareness",
   name: "impact_safety_awareness",
   fieldset: {
     legend: {
-      text: "Safety awareness (1 of 3 concerns you identified)",
+      text: legend,
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m"
     }
@@ -53,14 +56,9 @@ GOV.UK Prototype Kit
 }) }}
 
 
-    {% from "govuk/components/button/macro.njk" import govukButton %}
+      <button class=" govuk-button" data-module="govuk-button">Continue</button>
 
-    {{ govukButton({
-  text: "Continue",
-  href: "#",
-  isStartButton: false
-}) }}
-
+    </form>
 
   </div>
 </div>

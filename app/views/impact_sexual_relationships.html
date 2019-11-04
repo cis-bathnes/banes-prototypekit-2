@@ -15,16 +15,18 @@ GOV.UK Prototype Kit
   href: "javascript: window.history.go(-1)"
 }) }}
     <form action="/concerning-impacts" method="post" class="form">
+
       <h1 class="govuk-heading-xl">What impact do you feel this is currently having on the child or young person?</h1>
 
       {% from "govuk/components/radios/macro.njk" import govukRadios %}
+      {% set legend = "Sexual relationships " + data['concerns-impacts-current-legend'] %}
 
       {{ govukRadios({
   idPrefix: "impact_sexual_relationships",
   name: "impact_sexual_relationships",
   fieldset: {
     legend: {
-      text: "Sexual Relationships (1 of 3 concerns you identified)",
+      text: legend,
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m"
     }
