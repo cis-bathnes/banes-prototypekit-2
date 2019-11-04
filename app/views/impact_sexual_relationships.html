@@ -20,12 +20,8 @@ GOV.UK Prototype Kit
       {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
       {{ govukRadios({
-  idPrefix: "impact",
-<<<<<<< HEAD
-  name: "sexual-relationship",
-=======
-  name: "sexual_relationships",
->>>>>>> b0ef275d6e2f7650b4d7112752bb8bf98d74cea1
+  idPrefix: "impact_sexual_relationships",
+  name: "impact_sexual_relationships",
   fieldset: {
     legend: {
       text: "Sexual Relationships (1 of 3 concerns you identified)",
@@ -39,39 +35,22 @@ GOV.UK Prototype Kit
   items: [
     {
       value: "level2",
-<<<<<<< HEAD
-      text: "Child or young person has sense of lack of privacy and is unable to express their anxieties with regard to relationships due to inconsistent messages. Inappropriate use of language. Over friendly with strangers."
+      text: "Child or young person has sense of lack of privacy and is unable to
+      express their anxieties with regard to relationships due to inconsistent messages. Inappropriate use of language. Over friendly with strangers."
     },
     {
       value: "level3",
       text: "Friendships and relationships inappropriate for age . Young person
-      appears fearful, exhibiting interest in other risky behaviours e.g. alcohol, substance misuse . Secondary enuresis/encopresis. Sharing images online. Unsafe sexual behaviour albeit reported to be consensual. Compulsive masturbation"
+      appears fearful, exhibiting interest in other risky behaviours e.g. alcohol, substance misuse . Secondary enuresis/encopresis. Sharing images online. Unsafe sexual behaviour albeit reported to be consensual. Compulsive masturbation."
     },
     {
       value: "level4",
       text: "Friendships and relationships inappropriate for age. At risk of
-      exploitation and grooming, frequently missing from home and
-      school/college. Frequent changes in friendship groups."
+      exploitation and grooming, frequently missing from home and school/college. Frequent changes in friendship groups."
     },
     {
       value: "level5",
-      text: "Sexual activity in exchange for goods, Groomed and at risk of CSE and County Lines. Risk of rape, may request termination and present alone or with someone who will not leave her and answers for her. Frequent and excessive self-harm / overdose. Present extreme behaviour and violence which is out of character. STI’s and UTI’s. May disclose abuse"
-=======
-      text: "Potential for malnourishment and ill health as consistency of diet not maintained."
-    },
-    {
-      value: "level3",
-      text: "Carer continues to be inconsistent in preparation of meals, child’s
-      weight not maintained or growing concerns for obesity. Specialist diets not maintained and so impacting on health"
-    },
-    {
-      value: "level4",
-      text: "Child loses weight, unable to concentrate at school/college, clothes are increasingly ill-fitting. Health affected by inappropriate diet"
-    },
-    {
-      value: "level5",
-      text: "Child requires acute intensive care and clear that the child has suffered significant harm and is at risk of further harm"
->>>>>>> b0ef275d6e2f7650b4d7112752bb8bf98d74cea1
+      text: "Sexual activity in exchange for goods, Groomed and at risk of CSE and County Lines. Risk of rape, may request termination and present alone or with someone who will not leave her and answers for her. Frequent and excessive self-harm / overdose. Present extreme behaviour and violence which is out of character. STI’s and UTI’s. May disclose abuse."
     }
   ]
 }) }}
