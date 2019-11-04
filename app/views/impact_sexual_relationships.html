@@ -14,14 +14,18 @@ GOV.UK Prototype Kit
   text: "Back",
   href: "javascript: window.history.go(-1)"
 }) }}
+    <form action="/concerning-impacts" method="post" class="form">
+      <h1 class="govuk-heading-xl">What impact do you feel this is currently having on the child or young person?</h1>
 
-<h1 class="govuk-heading-xl">What impact do you feel this is currently having on the child or young person?</h1>
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
-{% from "govuk/components/radios/macro.njk" import govukRadios %}
-
-{{ govukRadios({
+      {{ govukRadios({
   idPrefix: "impact",
+<<<<<<< HEAD
   name: "sexual-relationship",
+=======
+  name: "sexual_relationships",
+>>>>>>> b0ef275d6e2f7650b4d7112752bb8bf98d74cea1
   fieldset: {
     legend: {
       text: "Sexual Relationships (1 of 3 concerns you identified)",
@@ -35,6 +39,7 @@ GOV.UK Prototype Kit
   items: [
     {
       value: "level2",
+<<<<<<< HEAD
       text: "Child or young person has sense of lack of privacy and is unable to express their anxieties with regard to relationships due to inconsistent messages. Inappropriate use of language. Over friendly with strangers."
     },
     {
@@ -51,20 +56,30 @@ GOV.UK Prototype Kit
     {
       value: "level5",
       text: "Sexual activity in exchange for goods, Groomed and at risk of CSE and County Lines. Risk of rape, may request termination and present alone or with someone who will not leave her and answers for her. Frequent and excessive self-harm / overdose. Present extreme behaviour and violence which is out of character. STI’s and UTI’s. May disclose abuse"
+=======
+      text: "Potential for malnourishment and ill health as consistency of diet not maintained."
+    },
+    {
+      value: "level3",
+      text: "Carer continues to be inconsistent in preparation of meals, child’s
+      weight not maintained or growing concerns for obesity. Specialist diets not maintained and so impacting on health"
+    },
+    {
+      value: "level4",
+      text: "Child loses weight, unable to concentrate at school/college, clothes are increasingly ill-fitting. Health affected by inappropriate diet"
+    },
+    {
+      value: "level5",
+      text: "Child requires acute intensive care and clear that the child has suffered significant harm and is at risk of further harm"
+>>>>>>> b0ef275d6e2f7650b4d7112752bb8bf98d74cea1
     }
   ]
 }) }}
 
 
-    {% from "govuk/components/button/macro.njk" import govukButton %}
+      <button class=" govuk-button" data-module="govuk-button">Continue</button>
 
-    {{ govukButton({
-  text: "Continue",
-  href: "#",
-  isStartButton: false
-}) }}
-
-
+    </form>
   </div>
 </div>
 
