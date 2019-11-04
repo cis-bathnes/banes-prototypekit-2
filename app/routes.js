@@ -49,6 +49,25 @@ router.post('/concerning-issues', function (req, res) {
   }
 })
 
+// concerning-impacts
+router.post('/concerning-impacts', function (req, res) {
+  let answers = req.session.data['issues-of-concern'];
+  let path = req.headers.referer.replace(/impact_/g, '');
+  path = path.split("/");
+  console.log(path);
+  if (path[path.length - 1] == 'issues_of_concern') {
+    req.session.data['concerns-impact-questions-key'] = 0;
+  } else {
+    req.session.data['concerns-impact-questions-key'] = answers.indexOf(path[path.length - 1]) + 1;
+  }
+  console.log(answers);
+  console.log(req.session.data['concerns-impact-questions-key']);
+  if (req.session.data['concerns-impact-questions-key'] < 0 || req.session.data['concerns-impact-questions-key'] == answers.length) {
+    res.redirect('/action_already_taken'); //TODO logic for answer levels
+  } else {
+    res.redirect('/impact_' + answers[req.session.data['concerns-impact-questions-key']])
+  }
+})
 
 router.post('/type-of-harm', function (req, res) {
   // Get the answer from session data
@@ -57,12 +76,12 @@ router.post('/type-of-harm', function (req, res) {
 
   let answer = req.body['none']
 
-  if(answer !== '_unchecked') {
+  if (answer !== '_unchecked') {
     res.redirect('/issues_of_concern')
-  } else{
+  } else {
     res.redirect('/outcome_1')
-  }   
-    
+  }
+
 
 })
 
