@@ -20,11 +20,11 @@ GOV.UK Prototype Kit
 {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
 {{ govukRadios({
-  idPrefix: "impact",
-  name: "food",
+  idPrefix: "impact_financial_hardship",
+  name: "impact_financial_hardship",
   fieldset: {
     legend: {
-      text: "Food (1 of 3 concerns you identified)",
+      text: "Financial Hardship (1 of 3 concerns you identified)",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m"
     }
@@ -35,20 +35,11 @@ GOV.UK Prototype Kit
   items: [
     {
       value: "level2",
-      text: "Potential for malnourishment and ill health as consistency of diet not maintained."
+      text: "The carer does not have the resources to provide to meet their families need so adults / children are occasionally left hungry as there is not enough money for food. The children cannot routinely take part in out of school activities."
     },
     {
       value: "level3",
-      text: "Carer continues to be inconsistent in preparation of meals, child’s
-      weight not maintained or growing concerns for obesity. Specialist diets not maintained and so impacting on health"
-    },
-    {
-      value: "level4",
-      text: "Child loses weight, unable to concentrate at school/college, clothes are increasingly ill-fitting. Health affected by inappropriate diet"
-    },
-    {
-      value: "level5",
-      text: "Child requires acute intensive care and clear that the child has suffered significant harm and is at risk of further harm"
+      text: "The carer does not have the resources to provide to meet their family’s needs but the money they do have is not priorities for the children who are often left hungry as there is not enough money for food / the house is cold there is no hot water, causing other issues e.g. child’s clothing continues to be unclean / the house is dirty."
     }
   ]
 }) }}

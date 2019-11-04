@@ -1,0 +1,68 @@
+{% extends "layout_unbranded.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+    {{ govukBackLink({
+  text: "Back",
+  href: "javascript: window.history.go(-1)"
+}) }}
+
+<h1 class="govuk-heading-xl">What impact do you feel this is currently having on the child or young person?</h1>
+
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+  idPrefix: "impact-parents-not-seeking-appropriate-advice",
+  name: "impact-parents-not-seeking-appropriate-advice",
+  fieldset: {
+    legend: {
+      text: "Parent(s) not seeking appropriate advice (1 of 3 concerns you identified)",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: "Pick the impact you think this is having on the child:"
+  },
+  items: [
+    {
+      value: "level2",
+      text: "Potentially puts the unborn baby at risk, and failure to identify conditions that can be identified routinely.  Increased risk of significant ill health and visual loss will impact on learning With support attending routine appointments, support given to manage range of commitments and manage daily routine."
+    },
+    {
+      value: "level3",
+      text: "Risks to the unborn not identified, lifestyle behaviours could adversely impact on the unborn’s health.  Continues not to bring child/ren to appointments which is having a detrimental effect on their health. Carer does not appear to understand the seriousness of this for the child/ren."
+    },
+    {
+      value: "level4",
+      text: "Unborn baby at risk due to mother’s failure to attend antenatal appointments.  Carer continues to listen to advice and acts when prompted but is not pro-active in meeting child’s needs. Child suffering unnecessary."
+    },
+    {
+      value: "level5",
+      text: "Potential for significant harm as no preparation for birth or new born baby’s arrival. Child hood illnesses not identified leading chronic presentation or acutely ill child. Carers not listening to advice."
+    }
+  ]
+}) }}
+
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+
+    {{ govukButton({
+  text: "Continue",
+  href: "#",
+  isStartButton: false
+}) }}
+
+
+  </div>
+</div>
+
+{% endblock %}

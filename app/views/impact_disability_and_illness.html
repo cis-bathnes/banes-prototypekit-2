@@ -20,11 +20,11 @@ GOV.UK Prototype Kit
 {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
 {{ govukRadios({
-  idPrefix: "impact",
-  name: "food",
+  idPrefix: "imapct-disability-and-illness",
+  name: "imapct-disability-and-illness",
   fieldset: {
     legend: {
-      text: "Food (1 of 3 concerns you identified)",
+      text: "Disability and illness (1 of 3 concerns you identified)",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m"
     }
@@ -35,20 +35,20 @@ GOV.UK Prototype Kit
   items: [
     {
       value: "level2",
-      text: "Potential for malnourishment and ill health as consistency of diet not maintained."
+      text: "Support from single agency in caring for a child with a disability leads to better understanding and ability to pro-actively consider needs."
     },
     {
       value: "level3",
-      text: "Carer continues to be inconsistent in preparation of meals, child’s
-      weight not maintained or growing concerns for obesity. Specialist diets not maintained and so impacting on health"
+      text: "Carers own needs continue to come before those of the child. Unable to prioritise for a number of reasons."
     },
     {
       value: "level4",
-      text: "Child loses weight, unable to concentrate at school/college, clothes are increasingly ill-fitting. Health affected by inappropriate diet"
+      text: "Child’s emotional health impacted on negatively, feels they are in the way and unloved. Poor sense of self-worth leading to poor
+      achievements."
     },
     {
       value: "level5",
-      text: "Child requires acute intensive care and clear that the child has suffered significant harm and is at risk of further harm"
+      text: "Child with disability is not meeting expected outcomes, carers not co-operating with treatment plans, resulting in significant harm to the child."
     }
   ]
 }) }}

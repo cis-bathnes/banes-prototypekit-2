@@ -1,0 +1,74 @@
+{% extends "layout_unbranded.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+    {{ govukBackLink({
+  text: "Back",
+  href: "javascript: window.history.go(-1)"
+}) }}
+
+<h1 class="govuk-heading-xl">What impact do you feel this is currently having on the child or young person?</h1>
+
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+  idPrefix: "impact_housing",
+  name: "impact_housing",
+  fieldset: {
+    legend: {
+      text: "Housing (1 of 3 concerns you identified)",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: "Pick the impact you think this is having on the child:"
+  },
+  items: [
+    {
+      value: "level2",
+      text: "Quality - Increased risk of asthma and increased risk of accidents. Stability - New adults may pose a threat, the instability causes distress to child and insecurity. Loss of friends and familiarity for child."
+    },
+    {
+      value: "level3",
+      text: "Quality - Personal circumstances overwhelm. Ongoing concerns with regard to housing impacting on family. Resulting in increased likelihood of ill-health and accidents. Newborn baby’s needs are not met and can put them at risk. Stability - Frequency of new adults in the home appears to be increasing and at risk of homelessness which will have negative impact on child’s security."
+    },
+    {
+      value: "level4",
+      text: "Quality - Unsafe environment for new-born baby. Child’s health deteriorates as a result of the insanitary conditions at home. Child unable to bring friends home as too embarrassed by their home circumstances. Child bullied at school/ college because they smell, of such as smoke, body odour, urine and faeces. Stability - Child feels increasingly insecure by frequency of moves, loss of friends and family.
+      Possible witness to inappropriate behaviour by the adults coming to the home. Possible drug dealing/cuckooing."
+    },
+    {
+      value: "level5",
+      text: "Quality - Unsafe environment for new born baby, with the potential for significant harm.
+      Child is missing from home, poor attendance at school/college,
+      increasingly risky behaviours, younger children develop secondary
+      enuresis
+      
+      Stabiity - New born baby at risk of significant harm from lack of shelter, warmth illness and infection. Child at risk of being drawn into inappropriate situations so as to fit in. Signs of significant harm including behavioural, poor educational achievement, self-harm , poor emotional health and well-being."
+    }
+  ]
+}) }}
+
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+
+    {{ govukButton({
+  text: "Continue",
+  href: "#",
+  isStartButton: false
+}) }}
+
+
+  </div>
+</div>
+
+{% endblock %}

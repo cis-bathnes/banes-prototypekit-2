@@ -21,10 +21,10 @@ GOV.UK Prototype Kit
 
 {{ govukRadios({
   idPrefix: "impact",
-  name: "food",
+  name: "sexual-relationship",
   fieldset: {
     legend: {
-      text: "Food (1 of 3 concerns you identified)",
+      text: "Sexual Relationships (1 of 3 concerns you identified)",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m"
     }
@@ -34,21 +34,23 @@ GOV.UK Prototype Kit
   },
   items: [
     {
-      value: "impact-malnourishment-ill-health",
-      text: "Potential for malnourishment and ill health as consistency of diet not maintained."
+      value: "level2",
+      text: "Child or young person has sense of lack of privacy and is unable to express their anxieties with regard to relationships due to inconsistent messages. Inappropriate use of language. Over friendly with strangers."
     },
     {
-      value: "impact-carer-prepatation-of-meals",
-      text: "Carer continues to be inconsistent in preparation of meals, child’s
-      weight not maintained or growing concerns for obesity. Specialist diets not maintained and so impacting on health"
+      value: "level3",
+      text: "Friendships and relationships inappropriate for age . Young person
+      appears fearful, exhibiting interest in other risky behaviours e.g. alcohol, substance misuse . Secondary enuresis/encopresis. Sharing images online. Unsafe sexual behaviour albeit reported to be consensual. Compulsive masturbation"
     },
     {
-      value: "impact-child-weight-loses",
-      text: "Child loses weight, unable to concentrate at school/college, clothes are increasingly ill-fitting. Health affected by inappropriate diet"
+      value: "level4",
+      text: "Friendships and relationships inappropriate for age. At risk of
+      exploitation and grooming, frequently missing from home and
+      school/college. Frequent changes in friendship groups."
     },
     {
-      value: "imapct-acute-intensive-care",
-      text: "Child requires acute intensive care and clear that the child has suffered significant harm and is at risk of further harm"
+      value: "level5",
+      text: "Sexual activity in exchange for goods, Groomed and at risk of CSE and County Lines. Risk of rape, may request termination and present alone or with someone who will not leave her and answers for her. Frequent and excessive self-harm / overdose. Present extreme behaviour and violence which is out of character. STI’s and UTI’s. May disclose abuse"
     }
   ]
 }) }}

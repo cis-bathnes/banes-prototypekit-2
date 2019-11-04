@@ -20,11 +20,11 @@ GOV.UK Prototype Kit
 {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
 {{ govukRadios({
-  idPrefix: "impact",
-  name: "food",
+  idPrefix: "impact_safety_awareness",
+  name: "impact_safety_awareness",
   fieldset: {
     legend: {
-      text: "Food (1 of 3 concerns you identified)",
+      text: "Adult Mental Health (1 of 3 concerns you identified)",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m"
     }
@@ -35,20 +35,12 @@ GOV.UK Prototype Kit
   items: [
     {
       value: "level2",
-      text: "Potential for malnourishment and ill health as consistency of diet not maintained."
+      text: "The carer may be withdrawn, apathetic and emotionally unavailable to their children. They may have trouble recognising children's needs and responding to cues. The Child may result in low self- esteem/self-worth or appear anxious. Single agency to provide strategies to manage in partnership with appropriate services to provide support. "
     },
     {
       value: "level3",
-      text: "Carer continues to be inconsistent in preparation of meals, child’s
-      weight not maintained or growing concerns for obesity. Specialist diets not maintained and so impacting on health"
-    },
-    {
-      value: "level4",
-      text: "Child loses weight, unable to concentrate at school/college, clothes are increasingly ill-fitting. Health affected by inappropriate diet"
-    },
-    {
-      value: "level5",
-      text: "Child requires acute intensive care and clear that the child has suffered significant harm and is at risk of further harm"
+      text: "Carers do not seek support routinely and or does not always take their medication so the child needs to take on tasks that the carer is not able to do. Child / young person is hyper- vigilant / or very controlling to compensate for the carers lack of capacity.  
+      Carers may be withdrawn, apathetic and emotionally unavailable to their child. They may have trouble recognising children's needs and responding to cues."
     }
   ]
 }) }}

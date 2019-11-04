@@ -20,11 +20,11 @@ GOV.UK Prototype Kit
 {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
 {{ govukRadios({
-  idPrefix: "impact",
-  name: "food",
+  idPrefix: "impact-childs-emotional-wellbeing",
+  name: "impact-childs-emotional-wellbeing",
   fieldset: {
     legend: {
-      text: "Food (1 of 3 concerns you identified)",
+      text: "Child’s emotional wellbeing (1 of 3 concerns you identified)",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m"
     }
@@ -35,20 +35,19 @@ GOV.UK Prototype Kit
   items: [
     {
       value: "level2",
-      text: "Potential for malnourishment and ill health as consistency of diet not maintained."
+      text: "Child is at risk of becoming involved in negative behaviour/ activities."
     },
     {
       value: "level3",
-      text: "Carer continues to be inconsistent in preparation of meals, child’s
-      weight not maintained or growing concerns for obesity. Specialist diets not maintained and so impacting on health"
+      text: "Child is involved in negative behaviour/activities, non-educational attendance, may be excluded at increased risk of grooming and exploitation."
     },
     {
       value: "level4",
-      text: "Child loses weight, unable to concentrate at school/college, clothes are increasingly ill-fitting. Health affected by inappropriate diet"
+      text: "Child is involved in negative behaviour/activities, is being encouraged by peers to engage in self-destructive anti-social or criminal behaviour."
     },
     {
       value: "level5",
-      text: "Child requires acute intensive care and clear that the child has suffered significant harm and is at risk of further harm"
+      text: "Child’s development is being significantly impaired, there is evidence of exploitation by others and there is evidence of self-harm. Child may be permanently excluded from school/college."
     }
   ]
 }) }}

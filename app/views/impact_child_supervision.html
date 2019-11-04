@@ -1,0 +1,68 @@
+{% extends "layout_unbranded.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+    {{ govukBackLink({
+  text: "Back",
+  href: "javascript: window.history.go(-1)"
+}) }}
+
+<h1 class="govuk-heading-xl">What impact do you feel this is currently having on the child or young person?</h1>
+
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+  idPrefix: "impact-child-supervision",
+  name: "impact-child-supervision",
+  fieldset: {
+    legend: {
+      text: "Child supervision (1 of 3 concerns you identified)",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: "Pick the impact you think this is having on the child:"
+  },
+  items: [
+    {
+      value: "level2",
+      text: "Child suffers unnecessary accidents and injuries, at risk of grooming, and risk from others. Safety and danger awareness reinforced by working with single agency results in improved supervision."
+    },
+    {
+      value: "level3",
+      text: "Children at risk of hurting themselves as carers continue to put own needs first and do not provide the supervision necessary to keep children safe.."
+    },
+    {
+      value: "level4",
+      text: "Child out late at night, Carers don’t know who they are with, behaviours change, frequently wearing new clothes and has more material objects e.g. mobiles, trainers. All indicate suspicion of being groomed. Younger children playing unsupervised at risk of physical harm."
+    },
+    {
+      value: "level5.",
+      text: "Evidence through association of child or young person being at risk of grooming, known to be mixing with ‘County Lines’ groups and/or CSE rings. Younger children at risk from traffic hazards as found wandering in street late at night."
+    }
+  ]
+}) }}
+
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+
+    {{ govukButton({
+  text: "Continue",
+  href: "#",
+  isStartButton: false
+}) }}
+
+
+  </div>
+</div>
+
+{% endblock %}

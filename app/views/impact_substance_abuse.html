@@ -1,0 +1,69 @@
+{% extends "layout_unbranded.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+    {{ govukBackLink({
+  text: "Back",
+  href: "javascript: window.history.go(-1)"
+}) }}
+
+<h1 class="govuk-heading-xl">What impact do you feel this is currently having on the child or young person?</h1>
+
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+  idPrefix: "impact-substance-abuse",
+  name: "impact-impact-substance-abuse",
+  fieldset: {
+    legend: {
+      text: "Substance Abuse (1 of 3 concerns you identified)",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: "Pick the impact you think this is having on the child:"
+  },
+  items: [
+    {
+      value: "level2",
+      text: "Child grows up to repeat behaviour of parents putting them at risk of infection, liver damage, grooming and county lines involvement. Child distressed by inconsistent mood of Carer resulting in low self-esteem/self-worth. Work with support worker to recognise impact of exposure to alcohol and substance misuse and also insight into the carers’ behaviours and moods. Providing strategies to manage in partnership with?"
+    },
+    {
+      value: "level3",
+      text: "Carers continue to use alcohol and drugs in front of the children. Continue to normalise their behaviour and will not listen to others. Carers lack any insight into their behaviour and the distress it causes to the child. The misuse of drugs and alcohol can result in foetal alcohol syndrome and greater risk of health related concerns for the unborn."
+    },
+    {
+      value: "level4",
+      text: "Potential withdrawal for new born baby. Long term effects on child’s development post birth. The child is unable to mix with peers as has to take responsibility for
+      younger siblings/ carers. Educational achievement is affected by missing days at school/college. Sense of missing out with peers."
+    },
+    {
+      value: "level5",
+      text: "Risk of premature birth/low birthweight. High chance of withdrawal for new born baby as well as long term effects on child post birth. Child unable to be a child due to responsibilities resulting in harm."
+    }
+  ]
+}) }}
+
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+
+    {{ govukButton({
+  text: "Continue",
+  href: "#",
+  isStartButton: false
+}) }}
+
+
+  </div>
+</div>
+
+{% endblock %}

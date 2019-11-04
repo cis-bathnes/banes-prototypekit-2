@@ -20,11 +20,11 @@ GOV.UK Prototype Kit
 {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
 {{ govukRadios({
-  idPrefix: "impact",
-  name: "food",
+  idPrefix: "impact-safe-sleeping-arrangements",
+  name: "impact-safe-sleeping-arrangements",
   fieldset: {
     legend: {
-      text: "Food (1 of 3 concerns you identified)",
+      text: "Safe sleeping arrangements (1 of 3 concerns you identified)",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m"
     }
@@ -35,20 +35,19 @@ GOV.UK Prototype Kit
   items: [
     {
       value: "level2",
-      text: "Potential for malnourishment and ill health as consistency of diet not maintained."
+      text: "Potential for cot death and for older children spreading diseases head lice and other contagious skin and respiratory conditions. Carers attend support groups and health education sessions facilitated by support agency. Results in improved consideration given to sleeping arrangements in the home."
     },
     {
       value: "level3",
-      text: "Carer continues to be inconsistent in preparation of meals, child’s
-      weight not maintained or growing concerns for obesity. Specialist diets not maintained and so impacting on health"
+      text: "Carers continue to smoke and consume alcohol whilst co-sleeping with baby. Baby observed to be overdressed and placed on front in cot and pram."
     },
     {
       value: "level4",
-      text: "Child loses weight, unable to concentrate at school/college, clothes are increasingly ill-fitting. Health affected by inappropriate diet"
+      text: "Baby becomes over heated or smothered by Carers but Carers still refuse to listen to advice."
     },
     {
       value: "level5",
-      text: "Child requires acute intensive care and clear that the child has suffered significant harm and is at risk of further harm"
+      text: "Baby has sleep apnoea, frequent admissions to hospital. Carers refuse to listen to advice and sleeping arrangements remain the same."
     }
   ]
 }) }}

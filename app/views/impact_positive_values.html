@@ -21,10 +21,10 @@ GOV.UK Prototype Kit
 
 {{ govukRadios({
   idPrefix: "impact",
-  name: "food",
+  name: "positive-values",
   fieldset: {
     legend: {
-      text: "Food (1 of 3 concerns you identified)",
+      text: "Positive values (1 of 3 concerns you identified)",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m"
     }
@@ -35,20 +35,23 @@ GOV.UK Prototype Kit
   items: [
     {
       value: "level2",
-      text: "Potential for malnourishment and ill health as consistency of diet not maintained."
+      text: "No appropriate role model and so child feels confused by experiences
+      and acts out. Supported by single agency to understand the importance
+      of instilling positive values and recognising what is inappropriate."
     },
     {
       value: "level3",
-      text: "Carer continues to be inconsistent in preparation of meals, child’s
-      weight not maintained or growing concerns for obesity. Specialist diets not maintained and so impacting on health"
+      text: "Carers continue to watch inappropriate material in front of children.
+      Carer unable to challenge partner due to own circumstances. Child
+      exhibiting inappropriate behaviour."
     },
     {
       value: "level4",
-      text: "Child loses weight, unable to concentrate at school/college, clothes are increasingly ill-fitting. Health affected by inappropriate diet"
+      text: "Child witnessing behaviours that are developmentally inappropriate, this may result in them acting out some of the behaviours. May impact on them normalising what they see. Sense of loneliness if unable to share with peers. Inappropriate play."
     },
     {
       value: "level5",
-      text: "Child requires acute intensive care and clear that the child has suffered significant harm and is at risk of further harm"
+      text: "Evidence of significant harm to child through disclosure or behaviour."
     }
   ]
 }) }}

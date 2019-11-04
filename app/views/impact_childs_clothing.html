@@ -20,11 +20,11 @@ GOV.UK Prototype Kit
 {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
 {{ govukRadios({
-  idPrefix: "impact",
-  name: "food",
+  idPrefix: "impact_childs_clothing",
+  name: "impact_childs_clothing",
   fieldset: {
     legend: {
-      text: "Food (1 of 3 concerns you identified)",
+      text: "Child’s clothing (1 of 3 concerns you identified)",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m"
     }
@@ -35,20 +35,19 @@ GOV.UK Prototype Kit
   items: [
     {
       value: "level2",
-      text: "Potential for malnourishment and ill health as consistency of diet not maintained."
+      text: "Child feels awkward and is teased, clothes are uncomfortable impacts on emotional health."
     },
     {
       value: "level3",
-      text: "Carer continues to be inconsistent in preparation of meals, child’s
-      weight not maintained or growing concerns for obesity. Specialist diets not maintained and so impacting on health"
+      text: "In spite of additional support child’s clothing continues to be unclean and ill-fitting, leading to bullying and distress."
     },
     {
       value: "level4",
-      text: "Child loses weight, unable to concentrate at school/college, clothes are increasingly ill-fitting. Health affected by inappropriate diet"
+      text: "Child is bullied at school/ college, clothes smelly and dirty child gets more illnesses due to inappropriate clothes for weather, Impact on child’s self-esteem and self-worth."
     },
     {
       value: "level5",
-      text: "Child requires acute intensive care and clear that the child has suffered significant harm and is at risk of further harm"
+      text: "Child starts to avoid school/ college, becomes withdrawn. Withdraws from previous interests. Increasing disharmony at home all signs of significant impact on child. May be groomed as response to wanting to fit in."
     }
   ]
 }) }}

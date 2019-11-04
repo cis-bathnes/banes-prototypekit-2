@@ -1,0 +1,80 @@
+{% extends "layout_unbranded.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+    {{ govukBackLink({
+  text: "Back",
+  href: "javascript: window.history.go(-1)"
+}) }}
+
+<h1 class="govuk-heading-xl">What impact do you feel this is currently having on the child or young person?</h1>
+
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+  idPrefix: "impact-adult-arguments-and-violence",
+  name: "impact-adult-arguments-and-violence",
+  fieldset: {
+    legend: {
+      text: "Adult arguments and violence (1 of 3 concerns you identified)",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: "Pick the impact you think this is having on the child:"
+  },
+  items: [
+    {
+      value: "level2",
+      text: "Research evidence of negative impact of witnessing abuse. Support to understand the impact of witnessing aggressive verbal abuse on
+      children results in reduction in frequency."
+    },
+    {
+      value: "level3",
+      text: "Stress in utero can result in increased cortisol levels which impacts on the neurological development of the unborn brain.
+      Neither carer is able to respond appropriately. The frequency and
+      duration of verbal abuse is increasing. Children are showing signs of
+      distress and mimicking behaviour at Nursery/School/ College
+      Child or young person becomes vulnerable to grooming and exploitation as they lack positive self-worth."
+    },
+    {
+      value: "level4",
+      text: "Risk of miscarriage, premature labour, stillbirth and impact on the
+      neurological development of the vulnerable new born baby.
+      Fear and sense of protection to the Carer leading to either normalising of behaviour or a child that is afraid impacting on the hard wiring of their brain
+      Child or young person feels unsafe, has no positive role model, feels
+      protective of the victim of domestic abuse which is impacting on them socially and educationally."
+    },
+    {
+      value: "level5",
+      text: "Risk of miscarriage, premature labour, stillbirth. Risk of significant
+      physical/emotional harm to new born baby.
+      Child that is at risk of significant emotionally and also at risk of physical harm by becoming involved in the abuse
+      Child or young person has suffered long term neglect of their emotional needs due to family environment and is now at high risk of or is already involved in sexual or criminal exploitation either as a perpetrator or victim."
+    }
+  ]
+}) }}
+
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+
+    {{ govukButton({
+  text: "Continue",
+  href: "#",
+  isStartButton: false
+}) }}
+
+
+  </div>
+</div>
+
+{% endblock %}

@@ -20,11 +20,11 @@ GOV.UK Prototype Kit
 {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
 {{ govukRadios({
-  idPrefix: "impact",
-  name: "food",
+  idPrefix: "impact_animal_neglect_or_danger",
+  name: "impact_animal_neglect_or_danger",
   fieldset: {
     legend: {
-      text: "Food (1 of 3 concerns you identified)",
+      text: "Animal neglect or danger (1 of 3 concerns you identified)",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m"
     }
@@ -35,20 +35,19 @@ GOV.UK Prototype Kit
   items: [
     {
       value: "level2",
-      text: "Potential for malnourishment and ill health as consistency of diet not maintained."
+      text: "Child’s needs are not met as so much chaos in home. Minimal impact require advice on pet care and risk re: health and safety but can be met through local support."
     },
     {
       value: "level3",
-      text: "Carer continues to be inconsistent in preparation of meals, child’s
-      weight not maintained or growing concerns for obesity. Specialist diets not maintained and so impacting on health"
+      text: "Animals have no boundaries on their behaviour, house smells and they are rarely exercised so have boundless energy and frustration which potentially puts children at risk."
     },
     {
       value: "level4",
-      text: "Child loses weight, unable to concentrate at school/college, clothes are increasingly ill-fitting. Health affected by inappropriate diet"
+      text: "Risk of disease and ill health from unhygienic practices. Children brought up to consider mistreatment of animals is normal. Children could be very distressed by the mistreatment which impacts on emotional health and well-being."
     },
     {
       value: "level5",
-      text: "Child requires acute intensive care and clear that the child has suffered significant harm and is at risk of further harm"
+      text: "Child encouraged to participate in mistreatment, is teased for showing concern. Child showing signs of distress in behaviour and presentation."
     }
   ]
 }) }}

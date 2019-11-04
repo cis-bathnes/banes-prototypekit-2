@@ -20,11 +20,11 @@ GOV.UK Prototype Kit
 {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
 {{ govukRadios({
-  idPrefix: "impact",
-  name: "food",
+  idPrefix: "impact-handling-of-response-to-baby",
+  name: "impact-handling-of-response-to-baby",
   fieldset: {
     legend: {
-      text: "Food (1 of 3 concerns you identified)",
+      text: "Handling of/response to baby (1 of 3 concerns you identified)",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m"
     }
@@ -35,20 +35,19 @@ GOV.UK Prototype Kit
   items: [
     {
       value: "level2",
-      text: "Potential for malnourishment and ill health as consistency of diet not maintained."
+      text: "Inappropriate hard wiring of the brain. Support given to raise awareness of baby’s developmental needs as they grow enabling carers to pre-empt behaviours. Examples given of appropriate handling and responsiveness."
     },
     {
       value: "level3",
-      text: "Carer continues to be inconsistent in preparation of meals, child’s
-      weight not maintained or growing concerns for obesity. Specialist diets not maintained and so impacting on health"
+      text: "Carers unable to be consistent in handling of baby, leading to baby having mixed messages. Baby appears fearful and attachment appears to be lacking."
     },
     {
       value: "level4",
-      text: "Child loses weight, unable to concentrate at school/college, clothes are increasingly ill-fitting. Health affected by inappropriate diet"
+      text: "Baby and Mother not attuned leading to Carer not being able to recognise baby’s needs. Baby’s needs not me and could result in poor feeding, nappy rash and emotional distress."
     },
     {
-      value: "level5",
-      text: "Child requires acute intensive care and clear that the child has suffered significant harm and is at risk of further harm"
+      value: "level5.",
+      text: "Child is showing signs of poor attachment, stays out late, reported missing, self-harming, educational achievement poor. Low self-esteem."
     }
   ]
 }) }}

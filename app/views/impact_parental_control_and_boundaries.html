@@ -20,11 +20,11 @@ GOV.UK Prototype Kit
 {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
 {{ govukRadios({
-  idPrefix: "impact",
-  name: "food",
+  idPrefix: "impact_parental_control_and_boundaries",
+  name: "impact_parental_control_and_boundaries",
   fieldset: {
     legend: {
-      text: "Food (1 of 3 concerns you identified)",
+      text: "Parental Control and Boundaries (1 of 3 concerns you identified)",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m"
     }
@@ -35,20 +35,19 @@ GOV.UK Prototype Kit
   items: [
     {
       value: "level2",
-      text: "Potential for malnourishment and ill health as consistency of diet not maintained."
+      text: "Child feels insecure, loss self-worth, child distressed by inconsistent parenting response. Parenting courses provide education and support to parent more effectively and gain insight into behaviours at different stages of development."
     },
     {
       value: "level3",
-      text: "Carer continues to be inconsistent in preparation of meals, child’s
-      weight not maintained or growing concerns for obesity. Specialist diets not maintained and so impacting on health"
+      text: "Carers unable to be consistent in boundaries leading to frustration and at times disciplining inappropriately. Child responds to inconsistency with increasing levels of challenging behaviour."
     },
     {
       value: "level4",
-      text: "Child loses weight, unable to concentrate at school/college, clothes are increasingly ill-fitting. Health affected by inappropriate diet"
+      text: "Physical abuse can lead to both physical and emotional harm. As boundaries are inconsistent the impact for the child would be one of confusion"
     },
     {
       value: "level5",
-      text: "Child requires acute intensive care and clear that the child has suffered significant harm and is at risk of further harm"
+      text: "Escalating levels of physical chastisement puts the child at significant risk of harm or disclosure by child leads to evidence of significant harm occurred."
     }
   ]
 }) }}

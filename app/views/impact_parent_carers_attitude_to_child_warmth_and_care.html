@@ -1,0 +1,72 @@
+{% extends "layout_unbranded.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+    {{ govukBackLink({
+  text: "Back",
+  href: "javascript: window.history.go(-1)"
+}) }}
+
+<h1 class="govuk-heading-xl">What impact do you feel this is currently having on the child or young person?</h1>
+
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+  idPrefix: "impact_parent_carers_attitude_to_child_warmth_and_care",
+  name: "impact_parent_carers_attitude_to_child_warmth_and_care",
+  fieldset: {
+    legend: {
+      text: "Parent/carer’s attitude to child, warmth and care (1 of 3 concerns you identified)",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: "Pick the impact you think this is having on the child:"
+  },
+  items: [
+    {
+      value: "level2",
+      text: "Inconsistent parenting, poor attachment, inappropriate responses
+      leaving child confused with potential impact on hard wiring of the brain. Carers unable to demonstrate warmth and care appropriately, require support to gain insight and strategies to manage. Child or young person has little self-worth and critical of self and others. The child or young person is exhibiting anxiety in response to parental anxiety."
+    },
+    {
+      value: "level3",
+      text: "In spite of support and advice unable to put child’s needs first, through inconsistent parenting. Resulting in child showing signs of distress, poor attachment, fearful and behavioural challenges. Lack emotional support. The Parent /Carer’s anxiety is beginning to impact on the child’s wellbeing in that they are unable to socialise or behave like peers."
+    },
+    {
+      value: "level4",
+      text: "Significant risk that mother will be unable to bond with baby resulting in long term impact on the baby’s emotional health and well-being. Additional risk of post-natal depression. Child feels unloved and uncared for, poor attachment. Low self –esteem and self-worth leading to behaviours to make sense of Carers reactions to them.  The parents high anxiety results in child being removed from
+      school/college unnecessarily or prevented from playing sport or socialising."
+    },
+    {
+      value: "level5",
+      text: "Potential for significant impact on baby’s physical and emotional wellbeing due to lack of attachment/bonding. Child is at risk of carrying out self-harming behaviours or putting
+      themselves in known dangerous situations. The parent /carer’s high level of anxiety is significantly harming the child’s development e.g. social isolation, poor attendance at
+      school/college or fabricating/inducing illness."
+    }
+  ]
+}) }}
+
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+
+    {{ govukButton({
+  text: "Continue",
+  href: "#",
+  isStartButton: false
+}) }}
+
+
+  </div>
+</div>
+
+{% endblock %}

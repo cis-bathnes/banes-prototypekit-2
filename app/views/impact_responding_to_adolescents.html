@@ -20,11 +20,11 @@ GOV.UK Prototype Kit
 {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
 {{ govukRadios({
-  idPrefix: "impact",
-  name: "food",
+  idPrefix: "impact-responding-to-adolescents",
+  name: "impact-responding-to-adolescents",
   fieldset: {
     legend: {
-      text: "Food (1 of 3 concerns you identified)",
+      text: "Responding to adolescents (1 of 3 concerns you identified)",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m"
     }
@@ -35,20 +35,19 @@ GOV.UK Prototype Kit
   items: [
     {
       value: "level2",
-      text: "Potential for malnourishment and ill health as consistency of diet not maintained."
+      text: "Adolescent misunderstood resulting in range of inappropriate."
     },
     {
       value: "level3",
-      text: "Carer continues to be inconsistent in preparation of meals, child’s
-      weight not maintained or growing concerns for obesity. Specialist diets not maintained and so impacting on health"
+      text: "Adolescents increasingly involved in risky behaviour, missing on occasions, staying out late and disrespectful to carers."
     },
     {
       value: "level4",
-      text: "Child loses weight, unable to concentrate at school/college, clothes are increasingly ill-fitting. Health affected by inappropriate diet"
+      text: "Adolescent at risk of Child Sexual Exploitation and Child Criminal Exploitation as they manage the challenges of puberty. Adolescent becomes confused as responses to them are inconsistent."
     },
     {
       value: "level5",
-      text: "Child requires acute intensive care and clear that the child has suffered significant harm and is at risk of further harm"
+      text: "Adolescent at risk of Child Sexual Exploitation and Child Criminal Exploitation and puts self at significant harm in attempt to find identity and sense of self-worth. Additional risk of self-harm in a variety of forms e.g. substance misuse, self-harm and anorexia nervosa."
     }
   ]
 }) }}
