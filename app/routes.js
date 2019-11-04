@@ -56,7 +56,6 @@ router.post('/type-of-harm', function (req, res) {
   // However in JavaScript we can't use hyphens in variable names
 
   let answer = req.body['none']
-  console.log(answer)
 
   if(answer !== '_unchecked') {
     res.redirect('/issues_of_concern')
