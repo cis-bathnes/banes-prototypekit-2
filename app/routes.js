@@ -50,9 +50,10 @@ router.post('/concerning-issues', function (req, res) {
 // concerning-impacts
 router.post('/concerning-impacts', function (req, res) {
   let answers = req.session.data['issues-of-concern'];
-  if (answers.indexOf('impact_adult_arguments_and_violence') > -1 &&
-    answers.indexOf('impact_substance_abuse') > -1 &&
-    answers.indexOf('impact_adult_mental_health') > -1) {
+  console.log(answers);
+  if (answers.indexOf('adult_arguments_and_violence') > -1 &&
+    answers.indexOf('substance_abuse') > -1 &&
+    answers.indexOf('adult_mental_health') > -1) {
     res.redirect('/outcome_1');
     return;
   }
@@ -75,7 +76,6 @@ router.post('/concerning-impacts', function (req, res) {
   // level = req.session.data[path[path.length - 1]];
   // console.log(path[path.length - 1] + ' = ' + level);
 
-  // console.log(answers);
   // console.log(req.session.data['concerns-impact-questions-key']);
   if (req.session.data['concerns-impact-questions-key'] < 0 || req.session.data['concerns-impact-questions-key'] == answers.length) {
     for (var i = 0; i < answers.length; i++) {
