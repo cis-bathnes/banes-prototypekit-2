@@ -50,10 +50,15 @@ router.post('/concerning-issues', function (req, res) {
 // concerning-impacts
 router.post('/concerning-impacts', function (req, res) {
   let answers = req.session.data['issues-of-concern'];
+  if (answers.indexOf('impact_adult_arguments_and_violence') > -1 &&
+    answers.indexOf('impact_substance_abuse') > -1 &&
+    answers.indexOf('impact_adult_mental_health') > -1) {
+    res.redirect('/outcome_1');
+    return;
+  }
   let path = req.headers.referer.replace(/impact_/g, '');
-  let level = -1;
+  // let level = -1;
   path = path.split("/");
-  console.log(path);
   if (path[path.length - 1] == 'issues_of_concern') {
     req.session.data['concerns-impact-questions-key'] = 0;
     req.session.data['concerns-impacts-current'] = 1;
@@ -66,15 +71,16 @@ router.post('/concerning-impacts', function (req, res) {
   } else {
     req.session.data['concerns-impacts-current-legend'] = "";
   }
-  console.log(req.session.data['concerns-impacts-current-legend']);
-  level = req.session.data[path[path.length - 1]];
-  console.log(path[path.length - 1] + ' = ' + level);
 
-  console.log(answers);
-  console.log(req.session.data['concerns-impact-questions-key']);
+  // level = req.session.data[path[path.length - 1]];
+  // console.log(path[path.length - 1] + ' = ' + level);
+
+  // console.log(answers);
+  // console.log(req.session.data['concerns-impact-questions-key']);
   if (req.session.data['concerns-impact-questions-key'] < 0 || req.session.data['concerns-impact-questions-key'] == answers.length) {
     for (var i = 0; i < answers.length; i++) {
-      if (req.session.data[answers[i]] == 'level4' || req.session.data[answers[i]] == 'level5') {
+      console.log(answers[i] + ' = ' + req.session.data['impact_' + answers[i]]);
+      if (req.session.data['impact_' + answers[i]] == 'level4' || req.session.data['impact_' + answers[i]] == 'level5') {
         res.redirect('/outcome_1');
         return;
       }
