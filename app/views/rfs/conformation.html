@@ -1,0 +1,63 @@
+
+{% extends "layout_unbranded.html" %}
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    	{% from "govuk/components/table/macro.njk" import govukTable %}
+
+      {% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "#"
+    },
+    {
+      text: "Children young people and families",
+      href: "#"
+    },
+    {
+      text: "Are you concerned about a child or young person"
+    }
+  ]
+}) }}
+
+<h1 class="govuk-heading-xl govuk-!-margin-bottom-6 govuk-!-margin-top-6">Thank you, we have received your request for service</h1>
+
+{% from "govuk/components/panel/macro.njk" import govukPanel %}
+
+{{ govukPanel({
+  titleText: "Application complete",
+  html: "Your reference is number: <strong> RFS123456</strong>"
+}) }}
+
+<h2 class="govuk-heading-l">What happens next</h2>
+
+<p class="govuk-body">We have sent a confirmation email to <name@email.com></p>
+
+<p class="govuk-body">  Your Request For Service (RFS) will now be viewed by the B&NES Childcare Triage Team.
+</p>
+<p class="govuk-body">  They may contact you to ask for more information.
+</p>
+<p class="govuk-body">  They will contact you when they make a decision to tell you what action they will take.
+</p>
+<p class="govuk-body">  <strong>You do not need to contact the Childcare Triage Team to check on the progress of this case, they will contact you. </strong>
+</p>
+<p class="govuk-body">  <strong>Only contact the team if you wish to inform them of new information you feel is relevant.</strong>
+</p>
+  
+<p class="govuk-body">
+<a href="">What did you think of this service? </a>
+(takes 30 seconds)</p>
+  
+  
+  
+
+{% endblock %}

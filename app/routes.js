@@ -3,8 +3,6 @@ const router = express.Router()
 
 // Add your routes here - above the module.exports line
 
-
-
 //Branching 
 
 // if professional collect contact details
@@ -37,7 +35,7 @@ router.post('/child-known', function (req, res) {
   }
 })
 
-
+// concerning-issues
 router.post('/concerning-issues', function (req, res) {
 
   let answer = req.session.data['concerning-issues']
@@ -99,8 +97,6 @@ router.post('/type-of-harm', function (req, res) {
   } else {
     res.redirect('/outcome_1')
   }
-
-
 })
 
 module.exports = router

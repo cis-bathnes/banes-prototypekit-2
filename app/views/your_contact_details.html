@@ -15,7 +15,7 @@ GOV.UK Prototype Kit
           href: "javascript: window.history.go(-1)"
         }) }}
 
-    <form action="/your_address" method="post" class="form">
+    <form action="/your_concerns" method="post" class="form">
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" aria-describedby="child-known-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
@@ -26,6 +26,7 @@ GOV.UK Prototype Kit
           <span id="child-known-hint" class="govuk-hint">
             <!-- This includes changing your last name or spelling your name differently. -->
           </span>
+          <h2 class="govuk-heading-m">About you</h2>
           <div class="govuk-form-group">
             <label class="govuk-label" for="full-name">
               Full name
@@ -50,8 +51,32 @@ GOV.UK Prototype Kit
             <input class="govuk-input" id="telephone" name="telephone" type="text" autocomplete="name"
               spellcheck="false">
           </div>
-        </fieldset>
-      </div>
+
+          <h2 class="govuk-heading-m">About your organisation and role with the family</h2>
+          <div class="govuk-form-group">
+              <label class="govuk-label" for="job-title">
+                Your job title or role
+              </label>
+              <input class="govuk-input" id="job-title" name="job-title" type="text" spellcheck="false">
+            </div>
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="agency">
+                The agency or organisation you work for
+              </label>
+              <span id="agency-hint" class="govuk-hint">
+                <!-- We’ll only use this to send you a receipt -->
+              </span>
+              <input class="govuk-input" id="agency" name="agency" type="text" aria-describedby="agency-hint"
+                autocomplete="agency" spellcheck="false">
+            </div>
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="family-role">
+                Your role with the family
+              </label>
+              <textarea class="govuk-textarea" id="family-role" name="family-role" rows="5"> </textarea>
+            </div>
+          </fieldset>
+        </div>
 
       <button class="govuk-button" data-module="govuk-button">Continue</button>
 

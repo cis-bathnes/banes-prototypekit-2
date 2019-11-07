@@ -1,0 +1,54 @@
+{% extends "layout_unbranded.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+      <h1 class="govuk-fieldset__heading">
+        What is your nationality?
+      </h1>
+    </legend>
+    <span id="nationality-hint" class="govuk-hint">
+      If you have dual nationality, select all options that are relevant to you.
+    </span>
+    <div class="govuk-checkboxes">
+
+
+    <ul class="govuk-grid-row">
+      <li class="card govuk-grid-column-one-third">
+        <a href="#0" class="card__body">
+          <div class="govuk-checkboxes govuk-checkboxes--small">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="nationality" name="nationality" type="checkbox" value="british" aria-describedby="nationality-item-hint">
+              <label class="govuk-label govuk-checkboxes__label" for="nationality">
+                British
+              </label>
+              <span id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                including English, Scottish, Welsh and Northern Irish
+              </span>
+            </div>
+        </a>
+        <div class="card__footer">
+          <span class="font-small">How many certificates sponsorship have left to use.</span>
+        </div>
+      </li>
+      <li class="card column-one-third">
+        <a href="#0" class="card__body">
+          <span class="bold-xlarge">6</span>
+          <span class="bold-small">certificates used</span>
+        </a>
+        <div class="card__footer">
+          <span class="font-small">This is how many certificates sponsorship have used.</span>
+        </div>
+      </li>
+    </ul>
+
+  </div>
+</fieldset>
+</div>
+
+{% endblock %}
