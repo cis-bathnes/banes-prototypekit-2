@@ -1,0 +1,64 @@
+{% extends "layout_unbranded.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+    {{ govukBackLink({
+  text: "Back",
+  href: "javascript: window.history.go(-1)"
+}) }}
+    <form action="/concerning-impacts" method="post" class="form">
+
+      <h1 class="govuk-heading-xl">What impact do you feel this is currently having on the child or young person?</h1>
+
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+      {% set legend = "Handling of/response to baby " + data['concerns-impacts-current-legend'] %}
+
+      {{ govukRadios({
+  idPrefix: "impact-response-to-baby",
+  name: "impact-response-to-baby",
+  fieldset: {
+    legend: {
+      text: legend,
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: "Pick the impact you think this is having on the child:"
+  },
+  items: [
+    {
+      value: "level2",
+      text: "Inappropriate hard wiring of the brain. Support given to raise awareness of baby’s developmental needs as they grow enabling carers to pre-empt behaviours. Examples given of appropriate handling and responsiveness."
+    },
+    {
+      value: "level3",
+      text: "Carers unable to be consistent in handling of baby, leading to baby having mixed messages. Baby appears fearful and attachment appears to be lacking."
+    },
+    {
+      value: "level4",
+      text: "Baby and Mother not attuned leading to Carer not being able to recognise baby’s needs. Baby’s needs not met and could result in poor feeding, nappy rash and emotional distress."
+    },
+    {
+      value: "level5",
+      text: "Child is showing signs of poor attachment, stays out late, reported missing, self-harming, educational achievement poor. Low self-esteem."
+    }
+  ]
+}) }}
+
+      <button class=" govuk-button" data-module="govuk-button">Continue</button>
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}
