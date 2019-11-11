@@ -8,139 +8,127 @@ GOV.UK Prototype Kit
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
- 
+
 
     <a href="javascript: window.history.go(-1)" class="govuk-back-link">Back</a>
 
+    <form action="/action-already-taken" method="post" class="form">
+
+      <div class="govuk-form-group">
+
+        <fieldset class="govuk-fieldset" aria-describedby="action-taken-hint">
+
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+
+            <h1 class="govuk-fieldset__heading">
+              What action has been taken in the last 3 months?
+            </h1>
+
+          </legend>
 
 
-    
-
-    
-
-
+          <span id="action-taken-hint" class="govuk-hint">
+            Select all that apply
+          </span>
 
 
+          <div class="govuk-checkboxes">
 
 
-  
-
-  
-
-  
-
-  
-
-  
-<div class="govuk-form-group">
-
-  <fieldset class="govuk-fieldset" aria-describedby="action-taken-hint">
-  
-  <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-  
-    <h1 class="govuk-fieldset__heading">
-      What action has been taken in the last 3 months?
-    </h1>
-  
-  </legend>
-  
-
-  <span id="action-taken-hint" class="govuk-hint">
-    Select all that apply
-  </span>
 
 
-  <div class="govuk-checkboxes">
-    
-      
-    
-    
-    
-    
-    
-    <div class="govuk-checkboxes__item">
-      <input class="govuk-checkboxes__input" id="action-taken" name="action-taken" type="checkbox" value="signposted-to-information" aria-describedby="action-taken-item-hint">
-      <label class="govuk-label govuk-checkboxes__label" for="action-taken">
-        The family has been provided with information and/or pointed towards relevant resources
-      </label>
-      
-      <span id="action-taken-item-hint" class="govuk-hint govuk-checkboxes__hint">
-        These could include links to online resources (e,g 1 Big Database, agencies etc) or printed materials.
-      </span>
-      
-    </div>
-    
-    
-    
-    
-    
-    
-    
-    <div class="govuk-checkboxes__item">
-      <input class="govuk-checkboxes__input" id="action-taken-2" name="action-taken" type="checkbox" value="single_agency_response" aria-describedby="action-taken-2-item-hint">
-      <label class="govuk-label govuk-checkboxes__label" for="action-taken-2">
-        A single agency (i.e. your agency or a partner agency) has responded to the family 
-      </label>
-      
-      <span id="action-taken-2-item-hint" class="govuk-hint govuk-checkboxes__hint">
-        This may include offering specific targeted support.
-      </span>
-      
-    </div>
-    
-    
-    
-    
-    
-    
-    
-    <div class="govuk-checkboxes__item">
-      <input class="govuk-checkboxes__input" id="action-taken-3" name="action-taken" type="checkbox" value="EHA" aria-describedby="action-taken-3-item-hint">
-      <label class="govuk-label govuk-checkboxes__label" for="action-taken-3">
-        An Early Help Assessment has been carried out
-      </label>
-      
-      <span id="action-taken-3-item-hint" class="govuk-hint govuk-checkboxes__hint">
-        The persistent emotional maltreatment of a child such as to cause severe and persistent adverse effects on the child’s emotional development.
-      </span>
-      
-    </div>
-    
-    
-    
-    
-    
-    
-    
-    <div class="govuk-checkboxes__item">
-      <input class="govuk-checkboxes__input" id="action-taken-4" name="action-taken" type="checkbox" value="referred_children_services">
-      <label class="govuk-label govuk-checkboxes__label" for="action-taken-4">
-        The concern has been referred to Children Services
-      </label>
-      
-    </div>
-    
-    <div class="govuk-radios__divider">or</div>
-
-    
-    <div class="govuk-checkboxes__item">
-      <input class="govuk-checkboxes__input" id="action-taken-5" name="action-taken" type="checkbox" value="none">
-      <label class="govuk-label govuk-checkboxes__label" for="action-taken-5">
-        None of the above actions have been taken 
-      </label>
-      
-    </div>
-    
-    
-  </div>
-  </fieldset>
 
 
-</div>
 
-<a href="#" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
-  Continue
-</a>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="action-taken" name="action-taken" type="checkbox"
+                value="signposted-to-information" aria-describedby="action-taken-item-hint">
+              <label class="govuk-label govuk-checkboxes__label" for="action-taken">
+                The family has been provided with information and/or pointed towards relevant resources
+              </label>
+
+              <span id="action-taken-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                These could include links to online resources (e,g 1 Big Database, agencies etc) or printed materials.
+              </span>
+
+            </div>
+
+
+
+
+
+
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="action-taken-2" name="action-taken" type="checkbox"
+                value="single_agency_response" aria-describedby="action-taken-2-item-hint">
+              <label class="govuk-label govuk-checkboxes__label" for="action-taken-2">
+                A single agency (i.e. your agency or a partner agency) has responded to the family
+              </label>
+
+              <span id="action-taken-2-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                This may include offering specific targeted support.
+              </span>
+
+            </div>
+
+
+
+
+
+
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="action-taken-3" name="action-taken" type="checkbox" value="EHA"
+                aria-describedby="action-taken-3-item-hint">
+              <label class="govuk-label govuk-checkboxes__label" for="action-taken-3">
+                An Early Help Assessment has been carried out
+              </label>
+
+              <span id="action-taken-3-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                The persistent emotional maltreatment of a child such as to cause severe and persistent adverse effects
+                on the child’s emotional development.
+              </span>
+
+            </div>
+
+
+
+
+
+
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="action-taken-4" name="action-taken" type="checkbox"
+                value="referred_children_services">
+              <label class="govuk-label govuk-checkboxes__label" for="action-taken-4">
+                The concern has been referred to Children Services
+              </label>
+
+            </div>
+
+            <div class="govuk-radios__divider">or</div>
+
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="action-taken-5" name="action-taken" type="checkbox"
+                value="none">
+              <label class="govuk-label govuk-checkboxes__label" for="action-taken-5">
+                None of the above actions have been taken
+              </label>
+
+            </div>
+
+
+          </div>
+        </fieldset>
+
+
+      </div>
+
+      <button class=" govuk-button" data-module="govuk-button">Continue</button>
+
+    </form>
 
 
 

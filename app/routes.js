@@ -91,6 +91,12 @@ router.post('/concerning-impacts', function (req, res) {
   }
 })
 
+//action-already-taken
+// TODO - don't really understand routing logic here
+router.post('/action-already-taken', function (req, res) {
+  res.redirect('/outcome_1')
+})
+
 router.post('/type-of-harm', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
