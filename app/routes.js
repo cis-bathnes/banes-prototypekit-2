@@ -94,7 +94,31 @@ router.post('/concerning-impacts', function (req, res) {
 //action-already-taken
 // TODO - don't really understand routing logic here
 router.post('/action-already-taken', function (req, res) {
-  res.redirect('/outcome_1')
+  if (req.session.data['action-taken'].indexOf('referred_children_services') > -1) {
+    res.redirect('/outcome_1');
+    return
+  } else if (req.session.data['action-taken'].indexOf('signposted-to-information') > -1) {
+    res.redirect('/outcome_3');
+  }
+  res.redirect('/outcome_3');
+  // switch (req.session.data['action-taken']) {
+  //   case 'signposted-to-information':
+  //     res.redirect('/outcome_3');
+  //     break;
+  //   case 'single_agency_response':
+  //     res.redirect('/outcome_2');
+  //     break;
+  //   case 'EHA':
+  //     res.redirect('/outcome_1');
+  //     break;
+  //   case 'referred_children_services':
+  //     res.redirect('/outcome_3');
+  //     break;
+  //   case 'none':
+  //   default:
+  //     res.redirect('/outcome_3');
+  //     break;
+  // }
 })
 
 router.post('/type-of-harm', function (req, res) {

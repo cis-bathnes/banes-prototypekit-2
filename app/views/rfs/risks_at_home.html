@@ -1,0 +1,156 @@
+{% extends "layout_unbranded.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+    {{ govukBackLink({
+          text: "Back",
+          href: "javascript: window.history.go(-1)"
+        }) }}
+
+    {% from "govuk/components/table/macro.njk" import govukTable %}
+
+
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-6 govuk-!-margin-top-6">Are there any risks we should be aware
+      of, if we visit the home of the child?
+    </h1>
+
+    {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+    {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+
+    {% set violenceHtml %}
+    {{ govukTextarea({
+          name: "violenceInput",
+          id: "violenceInput",
+          label: {
+            text: "Please provide details"
+          }
+        }) }}
+    {% endset -%}
+
+    {% set offendersHtml %}
+    {{ govukTextarea({
+          name: "offendersInput",
+          id: "offendersInput",
+          label: {
+            text: "Please provide details"
+          }
+        }) }}
+    {% endset -%}
+
+    {% set petsHtml %}
+    {{ govukTextarea({
+          name: "petsInput",
+          id: "petsInput",
+          label: {
+            text: "Please provide details"
+          }
+        }) }}
+    {% endset -%}
+
+    {% set propertyHtml %}
+    {{ govukTextarea({
+          name: "propertyInput",
+          id: "propertyInput",
+          label: {
+            text: "Please provide details"
+          }
+        }) }}
+    {% endset -%}
+
+    {% set otherHtml %}
+    {{ govukTextarea({
+        name: "otherInput",
+        id: "otherInput",
+        label: {
+          text: "Please provide details"
+        }
+      }) }}
+    {% endset -%}
+
+    {{ govukCheckboxes({
+  idPrefix: "outcome-1",
+  name: "outcome-1",
+  fieldset: {
+    legend: {
+      text: "",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: "Please select all that apply"
+  },
+  items: [
+    {
+      value: "violentAdults",
+      text: "Abusive and/or violent adults",
+      label: {
+        classes: "govuk-label--s"
+      },
+      conditional: {
+        html:violenceHtml
+      }
+    },
+    {
+      value: "offerenders",
+      text: "Offerender(s)",
+      label: {
+        classes: "govuk-label--s"
+      },
+      conditional: {
+        html:offendersHtml
+      }
+    },
+    {
+      value: "pets",
+      text: "Pets",
+      hint: "only tell us about these if they are a risk to staff or others",
+      label: {
+        classes: "govuk-label--s"
+      },
+      conditional: {
+        html:petsHtml
+      }
+    },
+    {
+      value: "property",
+      text: "Property",
+      hint: "e.g. other people present at the home, living/structural conditions",
+      label: {
+        classes: "govuk-label--s"
+      },
+      conditional: {
+        html:propertyHtml
+      }
+    },
+    {
+      value: "other",
+      text: "Other",
+      label: {
+        classes: "govuk-label--s"
+      },
+      conditional: {
+        html:otherHtml
+      }
+    }
+  ]
+}) }}
+    {{ govukButton({
+  text: "Continue",
+  href: "assessment_history",
+  isStartButton: false
+}) }}
+
+  </div>
+</div>
+
+{% endblock %}

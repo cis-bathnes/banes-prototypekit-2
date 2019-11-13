@@ -1,0 +1,86 @@
+{% extends "layout_unbranded.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+    {{ govukBackLink({
+          text: "Back",
+          href: "javascript: window.history.go(-1)"
+        }) }}
+
+    {% from "govuk/components/table/macro.njk" import govukTable %}
+    {% from "govuk/components/radios/macro.njk" import govukRadios %}
+    {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+    {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+    {% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-6 govuk-!-margin-top-6">Do you know if there have been any
+      assessments in the last 6 months?
+    </h1>
+
+    {{ govukTextarea({
+      name: "yesInputType",
+      id: "yesInputType",
+      label: {
+        text: "Type of assessment"
+      },
+      hint: {
+        text: "e.g. Early Help, Team Around a Family (TAF)"
+      }
+    }) }}
+
+    {{ govukDateInput({
+      id: "yesInputDate",
+      namePrefix: "yesInputDate",
+      fieldset: {
+        legend: {
+          text: "Date of assessment",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend"
+        }
+      }
+    }) }}
+
+    {{ govukTextarea({
+      name: "yesInputOutcome",
+      id: "yesInputOutcome",
+      label: {
+        text: "What was the outcome?"
+      }
+    }) }}
+
+    {{ govukFileUpload({
+      id: "yesInputUpload",
+      name: "yesInputUpload",
+      label: {
+        text: "Upload related documents file, if you have these to hand"
+      },
+      hint: {
+        text: "Use the button below to upload your document file"
+      }
+    }) }}
+
+    {{ govukButton({
+      text: "add another assessment",
+      href: "assessment_history_additional",
+      isStartButton: false
+    }) }}
+
+    {{ govukButton({
+  text: "Continue",
+  href: "other_agencies",
+  isStartButton: false
+}) }}
+
+  </div>
+</div>
+
+{% endblock %}

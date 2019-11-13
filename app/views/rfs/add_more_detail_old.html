@@ -1,18 +1,19 @@
+
 {% extends "layout_unbranded.html" %}
 {% block pageTitle %}
-GOV.UK Prototype Kit
+  GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
 
-    {% from "govuk/components/table/macro.njk" import govukTable %}
+    	{% from "govuk/components/table/macro.njk" import govukTable %}
 
-    {% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+      {% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
 
-    {{ govukBreadcrumbs({
+{{ govukBreadcrumbs({
   items: [
     {
       text: "Home",
@@ -28,15 +29,15 @@ GOV.UK Prototype Kit
   ]
 }) }}
 
-    <h1 class="govuk-heading-xl govuk-!-margin-bottom-6 govuk-!-margin-top-6">Add more detail</h1>
+<h1 class="govuk-heading-xl govuk-!-margin-bottom-6 govuk-!-margin-top-6">Add more detail</h1>
 
-    {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
 
-    {{ govukSummaryList({
+{{ govukSummaryList({
   rows: [
     {
       key: {
-        text: "Child Name"
+        text: "Name"
       },
       value: {
         text: "Sarah Philips"
@@ -53,7 +54,7 @@ GOV.UK Prototype Kit
     },
     {
       key: {
-        text: "Child Date of birth"
+        text: "Date of birth"
       },
       value: {
         text: "5 January 1978"
@@ -70,7 +71,7 @@ GOV.UK Prototype Kit
     },
     {
       key: {
-        text: "Child Address"
+        text: "Contact information"
       },
       value: {
         html: "72 Guild Street<br>London<br>SE23 6FH"
@@ -80,7 +81,7 @@ GOV.UK Prototype Kit
           {
             href: "#",
             text: "Change",
-            visuallyHiddenText: "address"
+            visuallyHiddenText: "contact information"
           }
         ]
       }
@@ -108,9 +109,9 @@ GOV.UK Prototype Kit
   ]
 }) }}
 
-    {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
 
-    {{ govukTextarea({
+{{ govukTextarea({
   name: "more-detail",
   id: "more-detail",
   label: {
@@ -120,21 +121,8 @@ GOV.UK Prototype Kit
     text: "This may include what's working well, what you are worried about, what needs to change and if you have already taken any steps to reduce the risk."
   }
 }) }}
+  
+  
+  
 
-    {{ govukTextarea({
-  name: "impact",
-  id: "impact",
-  label: {
-    text: "Tell us about the inpact you feel this is having on the child"
-  }
-}) }}
-
-    {% from "govuk/components/button/macro.njk" import govukButton %}
-
-    {{ govukButton({
-text: "Continue",
-href: "communicate_with_family",
-isStartButton: false
-}) }}
-
-    {% endblock %}
+{% endblock %}

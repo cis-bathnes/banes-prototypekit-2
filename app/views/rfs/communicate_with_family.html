@@ -1,0 +1,119 @@
+{% extends "layout_unbranded.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+    {{ govukBackLink({
+          text: "Back",
+          href: "javascript: window.history.go(-1)"
+        }) }}
+
+    {% from "govuk/components/table/macro.njk" import govukTable %}
+
+
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-6 govuk-!-margin-top-6">Help us communicate with the family</h1>
+
+    {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+    {% from "govuk/components/select/macro.njk" import govukSelect %}
+    {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+
+    {% set interpreterHtml %}
+    {{ govukSelect({
+        id: "interpreterInput",
+        name: "interpreterInput",
+        label: {
+          text: "Which language is required?"
+        },
+        items: [
+          {
+            value: "french",
+            text: "French"
+          },
+          {
+            value: "spanish",
+            text: "Spanish",
+            selected: true
+          },
+          {
+            value: "german",
+            text: "German"
+          },
+          {
+            value: "unknown",
+            text: "I don't know"
+          }
+        ]
+      }) }}
+    {% endset -%}
+
+    {% set otherHtml %}
+    {{ govukTextarea({
+        name: "otherInput",
+        id: "otherInput",
+        label: {
+          text: "Please provide details"
+        }
+      }) }}
+    {% endset -%}
+
+    {{ govukCheckboxes({
+  idPrefix: "outcome-1",
+  name: "outcome-1",
+  fieldset: {
+    legend: {
+      text: "Will any of the following be required to help us communicate with the family?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: "Please select all that apply"
+  },
+  items: [
+    {
+      value: "sign-language",
+      text: "sign language",
+      label: {
+        classes: "govuk-label--s"
+      }
+    },
+    {
+      value: "interpreter",
+      text: "Interpreter, needed (language)",
+      label: {
+        classes: "govuk-label--s"
+      },
+      conditional: {
+        html:interpreterHtml
+      }
+    },
+    {
+      value: "other",
+      text: "Other",
+      label: {
+        classes: "govuk-label--s"
+      },
+      conditional: {
+        html:otherHtml
+      }
+    }
+  ]
+}) }}
+    {{ govukButton({
+  text: "Continue",
+  href: "risks_at_home",
+  isStartButton: false
+}) }}
+
+  </div>
+</div>
+
+{% endblock %}
